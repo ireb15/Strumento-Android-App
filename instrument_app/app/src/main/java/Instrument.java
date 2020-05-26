@@ -45,4 +45,8 @@ public abstract class Instrument {
     public String getDescription() {
         return description;
     }
+
+    public int getViews() {
+        return views;
+    }
 }
