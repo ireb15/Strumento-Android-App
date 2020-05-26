@@ -11,9 +11,10 @@ public abstract class Instrument {
     private String description;
     private int id;
     private int views;
+    private int[] images;
 
-    public Instrument(String title, int price, String brand, String colour,
-                      String condition, String location, String description, int id) {
+    public Instrument(String title, int price, String brand, String colour, String condition,
+                      String location, String description, int id, int[] images) {
 
         this.title = title;
         this.price = price;
@@ -23,6 +24,7 @@ public abstract class Instrument {
         this.location = location;
         this.description = description;
         this.id = id;
+        this.images = images;
     }
 
     public String getTitle() {
@@ -60,14 +62,18 @@ public abstract class Instrument {
     public int getId() {
         return id;
     }
+
+    public int[] getImages() {
+        return images;
+    }
 }
 
 // Guitar Class
 abstract class Guitar extends Instrument {
     public Guitar (String title, int price, String brand, String colour,
-                   String condition, String location, String description, int id)
+                   String condition, String location, String description, int id, int[] images)
     {
-        super(title,  price,  brand, colour, condition, location, description, id) ;
+        super(title,  price,  brand, colour, condition, location, description, id, images) ;
     }
 
 }
@@ -75,44 +81,45 @@ abstract class Guitar extends Instrument {
 // Acoustic Guitar Class
 class AcousticGuitar extends Instrument {
     public AcousticGuitar (String title, int price, String brand, String colour,
-                    String condition, String location, String description, int id)
+                    String condition, String location, String description, int id, int[] images)
     {
-        super(title,  price,  brand, colour, condition, location, description, id) ;
+        super(title,  price,  brand, colour, condition, location, description, id, images) ;
     }
 }
 
 // Electric Guitar Class
 class ElectricGuitar extends Instrument {
     public ElectricGuitar (String title, int price, String brand, String colour,
-                           String condition, String location, String description, int id)
+                           String condition, String location, String description, int id,
+                           int[] images)
     {
-        super(title,  price,  brand, colour, condition, location, description, id) ;
+        super(title,  price,  brand, colour, condition, location, description, id, images) ;
     }
 }
 
 // Piano Class
 class Piano extends Instrument {
     public Piano (String title, int price, String brand, String colour,
-                   String condition, String location, String description, int id)
+                   String condition, String location, String description, int id, int[] images)
     {
-        super(title,  price,  brand, colour, condition, location, description, id) ;
+        super(title,  price,  brand, colour, condition, location, description, id, images) ;
     }
 }
 
 // Ukulele Class
 class Ukulele extends Instrument {
     public Ukulele (String title, int price, String brand, String colour,
-                  String condition, String location, String description, int id)
+                  String condition, String location, String description, int id, int[] images)
     {
-        super(title,  price,  brand, colour, condition, location, description, id) ;
+        super(title,  price,  brand, colour, condition, location, description, id, images) ;
     }
 }
 
 // Drum Class
 class Drum extends Instrument {
     public Drum (String title, int price, String brand, String colour,
-                  String condition, String location, String description, int id)
+                  String condition, String location, String description, int id, int[] images)
     {
-        super(title,  price,  brand, colour, condition, location, description, id) ;
+        super(title,  price,  brand, colour, condition, location, description, id, images) ;
     }
 }
