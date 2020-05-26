@@ -2,6 +2,7 @@
 // instruments (10 instruments per category/sub-category).
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class InstrumentProvider {
 
@@ -34,6 +35,8 @@ public class InstrumentProvider {
 
         // Generate acoustic guitars
         ArrayList<AcousticGuitar> acousticGuitars = new ArrayList<AcousticGuitar>();
+        int j = 0;
+        int[] images3 = new int[3];
         for (int i = 0; i < 10; i++) {
             int id = i + 1;
             String title = titles[i];
@@ -43,9 +46,13 @@ public class InstrumentProvider {
             String condition = conditions[i];
             String location = locations[i];
             String description = descriptions[i];
-            for (int j = 0; j < 5; j++) {
-                int[] images5 = images[j];
+            while (j < j + 3) {
+                images3 = Arrays.copyOf(images, 3);
+                images3[j] = images[j];
+                j++;
             }
+            AcousticGuitar acousticGuitar = new AcousticGuitar(title, price, brand, colour,
+                    condition, location, description, id, images3);
         }
 
         ArrayList<ElectricGuitar> electricGuitars = new ArrayList<ElectricGuitar>();
