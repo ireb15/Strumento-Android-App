@@ -30,8 +30,8 @@ public class InstrumentProvider {
     // Image path of instrument images in the drawable folder
     static int[] images = {};
 
-    // Generate data for all of the instruments
-    public static ArrayList<Instrument> generateData() {
+    // Generate data Acoustic Guitars
+    public static ArrayList<AcousticGuitar> generateAcousticGuitars() {
 
         // Generate acoustic guitars
         ArrayList<AcousticGuitar> acousticGuitars = new ArrayList<AcousticGuitar>();
@@ -53,15 +53,13 @@ public class InstrumentProvider {
             }
             AcousticGuitar acousticGuitar = new AcousticGuitar(title, price, brand, colour,
                     condition, location, description, id, images3);
+            acousticGuitars.add(acousticGuitar);
         }
-
-        ArrayList<ElectricGuitar> electricGuitars = new ArrayList<ElectricGuitar>();
-        ArrayList<Ukuleles> ukuleles = new ArrayList<Ukuleles>();
-        ArrayList<Pianos> pianos = new ArrayList<Pianos>();
-        ArrayList<Drums> drums = new ArrayList<Drums>();
+        return acousticGuitars;
     }
 
-    public static int[] appendX(int n, int array[], int x) {
-
-    }
+    ArrayList<ElectricGuitar> electricGuitars = new ArrayList<ElectricGuitar>();
+    ArrayList<Ukuleles> ukuleles = new ArrayList<Ukuleles>();
+    ArrayList<Pianos> pianos = new ArrayList<Pianos>();
+    ArrayList<Drums> drums = new ArrayList<Drums>();
 }
