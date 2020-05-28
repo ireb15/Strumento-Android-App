@@ -1,6 +1,8 @@
 // The InstrumentProvider class simulates fetching data from our static 'database' of 50
 // instruments (10 instruments per category/sub-category).
 
+import com.example.instrument_app.R;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -12,9 +14,9 @@ public class InstrumentProvider {
             "Taylor Acoustic Guitar","Martin Acoustic Guitar","Guild Acoustic Guitar",
             "Seagull Acoustic Guitar","Yamaha Acoustic Guitar","Ovation Acoustic Guitar",
             "Washburn Acoustic Guitar",
-            "Fender Electric Guitar","Gibson Electric Guitar","Takamine Electric Guitar",
-            "Taylor Electric Guitar","Martin Electric Guitar","Guild Electric Guitar",
-            "Seagull Electric Guitar","Yamaha Electric Guitar","Epiphone Electric Guitar",
+            "Fender Electric Guitar","Gibson Electric Guitar","LTD Electric Guitar",
+            "PRS Electric Guitar","Gretsch Electric Guitar","Guild Electric Guitar",
+            "Jackson Electric Guitar","Yamaha Electric Guitar","Vintage Electric Guitar",
             "Washburn Electric Guitar",
             "C.Bechstein Piano","Bluthner Piano","Bosendorfer Piano","FAZIOLI Piano",
             "Grotrian-Steinweg Piano","Sauter Piano","Shigeru Kawai Piano","Steinway & Sons Piano",
@@ -39,11 +41,11 @@ public class InstrumentProvider {
     // Brands
     static String[] brands = {
             "Fender","Gibson","Takamine","Taylor","Martin","Guild","Seagull","Yamaha","Ovation",
-            "Washburn", "Fender","Gibson","Takamine","Taylor","Martin","Guild","Seagull",
-            "Yamaha","Epiphone","Washburn","C.Bechstein","Bluthner","Bosendorfer","FAZIOLI",
+            "Washburn","Fender","Gibson","LTD","PRS","Gretsch","Guild","Jackson",
+            "Yamaha","Vintage","Washburn","C.Bechstein","Bluthner","Bosendorfer","FAZIOLI",
             "Grotrian-Steinweg","Sauter","Shigeru Kawai","Steinway & Sons","Steingraeber & Sohne","Yamaha",
             "Makala","Kala","Donner","Lohanu","Hricane","Pomaikai","Fender","Lanikai", "Mahalo",
-            "Hola!","Tama","DW","Yamaha","Sonor", "Pearl","Ludwig","Gretsch","Canopus","Noble & Cooley",
+            "Kapono","Tama","DW","Yamaha","Sonor", "Pearl","Ludwig","Gretsch","Canopus","Noble & Cooley",
             "British Drum Company"
     };
 
@@ -141,7 +143,22 @@ public class InstrumentProvider {
     };
 
     // Image path of instrument images in the drawable folder
-    static int[] images = {};
+    static int[] images = {R.drawable.FenderAcoustic1, R.drawable.FenderAcoustic2,
+            R.drawable.FenderAcoustic3, R.drawable.GibsonAcoustic1, R.drawable.GibsonAcoustic2,
+            R.drawable.GibsonAcoustic3, R.drawable.TakamineAcoustic1, R.drawable.TakamineAcoustic2,
+            R.drawable.TakamineAcoustic3, R.drawable.TaylorAcoustic1, R.drawable.TaylorAcoustic2,
+            R.drawable.TaylorAcoustic3, R.drawable.MartinAcoustic1, R.drawable.MartinAcoustic2,
+            R.drawable.MartinAcoustic3, R.drawable.GuildAcoustic1, R.drawable.GuildAcoustic2,
+            R.drawable.GuildAcoustic3, R.drawable.SeagullAcoustic1, R.drawable.SeagullAcoustic2,
+            R.drawable.SeagullAcoustic3, R.drawable.YamahaAcoustic1, R.drawable.YamahaAcoustic2,
+            R.drawable.YamahaAcoustic3, R.drawable.OvationAcoustic1, R.drawable.OvationAcoustic2,
+            R.drawable.OvationAcoustic3, R.drawable.WashburnAcoustic1, R.drawable.WashburnAcoustic2,
+            R.drawable.WashburnAcoustic3, R.drawable.FenderElectric1, R.drawable.FenderElectric2,
+            R.drawable.FenderElectric3, R.drawable.GibsonElectric1, R.drawable.GibsonElectric2,
+            R.drawable.GibsonElectric3, R.drawable.LTDElectric1, R.drawable.LTDElectric2,
+            R.drawable.LTDElectric3, R.drawable.PRSElectric1, R.drawable.PRSElectric2,
+            R.drawable.PRSElectric3, R.drawable.GretschElectric1, R.drawable.GretschElectric2,
+            R.drawable.GretschElectric3, R.drawable.GuildElectric1, R.drawable.GuildElectric2};
 
     // Generate data for Acoustic Guitars
     public static ArrayList<AcousticGuitar> generateAcousticGuitars() {
