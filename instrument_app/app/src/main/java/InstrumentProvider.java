@@ -44,7 +44,7 @@ public class InstrumentProvider {
             "Grotrian-Steinweg","Sauter","Shigeru Kawai","Steinway & Sons","Steingraeber & Sohne","Yamaha",
             "Makala","Kala","Donner","Lohanu","Hricane","Pomaikai","Fender","Lanikai", "Mahalo",
             "Hola!","Tama","DW","Yamaha","Sonor", "Pearl","Ludwig","Gretsch","Canopus","Noble & Cooley",
-            "British Drum Company Drums"
+            "British Drum Company"
     };
 
     // Colours
