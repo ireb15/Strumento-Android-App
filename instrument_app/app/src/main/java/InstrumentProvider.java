@@ -55,10 +55,11 @@ public class InstrumentProvider {
             "Sunset Blue","Red Tear Drop","Green",
             "Transparent Black","Seafoam Green","Purple Natural Burst","Crab Blue","Crest White",
             "Blonde","Pavo Purple","Red Raspberry","Cherry Sunburst","Black",
-            "","","","","","","","","","",
+            "Black","Black","Black","Red","Harvest Stain","Black","Black","Black","Harvest Stain","White",
             "Blue","Mahogany","Mahogany","Sapele/Mahogany","Spruce","Pink","Surf Green","Purple",
             "Yellow","Natural",
-            "","","","","","","","","",""
+            "Metallic Turquoise","Toasted Almond","Deep Red","Silver","Black","Blue Shell",
+            "Golden","Natural Wood","Stained Wood","Cream"
     };
 
     // Conditions
