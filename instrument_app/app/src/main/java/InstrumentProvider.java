@@ -14,14 +14,14 @@ public class InstrumentProvider {
             "Washburn Acoustic Guitar",
             "Fender Electric Guitar","Gibson Electric Guitar","Takamine Electric Guitar",
             "Taylor Electric Guitar","Martin Electric Guitar","Guild Electric Guitar",
-            "Seagull Electric Guitar","Yamaha Electric Guitar","Ovation Electric Guitar",
+            "Seagull Electric Guitar","Yamaha Electric Guitar","Epiphone Electric Guitar",
             "Washburn Electric Guitar",
             "C.Bechstein Piano","Bluthner Piano","Bosendorfer Piano","FAZIOLI Piano",
-            "Grotrian Piano","Sauter Piano","Shigeru Kawai Piano","Steinway & Sons Piano",
+            "Grotrian-Steinweg Piano","Sauter Piano","Shigeru Kawai Piano","Steinway & Sons Piano",
             "Steingraeber & Sohne Piano","Yamaha Piano",
             "Makala Ukulele","Kala Ukulele","Donner Ukulele","Lohanu Ukulele",
             "Hricane Ukulele","Pomaikai Ukulele","Fender Ukulele","Lanikai Ukulele",
-            "Mahalo Ukulele","Hola! Ukulele",
+            "Mahalo Ukulele","Kapono Ukulele",
             "Tama Drums","DW Drums","Yamaha Drums","Sonor Drums", "Pearl Drums",
             "Ludwig Drums","Gretsch Drums","Canopus Drums","Noble & Cooley Drums",
             "British Drum Company Drums"
@@ -40,8 +40,8 @@ public class InstrumentProvider {
     static String[] brands = {
             "Fender","Gibson","Takamine","Taylor","Martin","Guild","Seagull","Yamaha","Ovation",
             "Washburn", "Fender","Gibson","Takamine","Taylor","Martin","Guild","Seagull",
-            "Yamaha","Ovation","Washburn","C.Bechstein","Bluthner","Bosendorfer","FAZIOLI",
-            "Grotrian","Sauter","Shigeru Kawai","Steinway & Sons","Steingraeber & Sohne","Yamaha",
+            "Yamaha","Epiphone","Washburn","C.Bechstein","Bluthner","Bosendorfer","FAZIOLI",
+            "Grotrian-Steinweg","Sauter","Shigeru Kawai","Steinway & Sons","Steingraeber & Sohne","Yamaha",
             "Makala","Kala","Donner","Lohanu","Hricane","Pomaikai","Fender","Lanikai", "Mahalo",
             "Hola!","Tama","DW","Yamaha","Sonor", "Pearl","Ludwig","Gretsch","Canopus","Noble & Cooley",
             "British Drum Company Drums"
@@ -49,7 +49,7 @@ public class InstrumentProvider {
 
     // Colours
     static String[] colours = {
-            "","","","","","","","","","",
+            "Ice blue","","Black","Natural","Natural","","","","","",
             "","","","","","","","","","",
             "","","","","","","","","","",
             "","","","","","","","","","",
