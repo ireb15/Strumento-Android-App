@@ -49,10 +49,13 @@ public class InstrumentProvider {
 
     // Colours
     static String[] colours = {
-            "Ice blue","","Black","Natural","Natural","","","","","",
+            "Ice Blue","Chroma Black Cherry","Black","Spruce","Spruce","Antique Burst","Mahogany",
+            "Sunset Blue","Red Tear Drop","Green",
+            "Transparent Black","Seafoam Green","Purple Natural Burst","Crab Blue","Crest White",
+            "Blonde","Pavo Purple","Red Raspberry","Cherry Sunburst","Black",
             "","","","","","","","","","",
-            "","","","","","","","","","",
-            "","","","","","","","","","",
+            "Blue","Mahogany","Mahogany","Sapele/Mahogany","Spruce","Pink","Surf Green","Purple",
+            "Yellow","Natural",
             "","","","","","","","","",""
     };
 
