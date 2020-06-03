@@ -13,7 +13,7 @@ public class MainActivity extends AppCompatActivity {
     public static final String ACOUSTIC_GUITAR_DETAIL_KEY = "acoustic guitar";
 
     ListView lvAcousticGuitars;
-    InstrumentAdapter acousticGuitarAdapter;
+    InstrumentAdapter acousticGuitarsAdapter;
     ArrayList<AcousticGuitar> acousticGuitars;
 
     @Override
