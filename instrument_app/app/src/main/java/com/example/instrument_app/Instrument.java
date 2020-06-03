@@ -1,6 +1,6 @@
-//Instrument App Classes
+package com.example.instrument_app;//com.example.instrument_app.Instrument App Classes
 
-// Instrument Class
+// com.example.instrument_app.Instrument Class
 public abstract class Instrument {
     private String title;
     private int price;
@@ -68,7 +68,7 @@ public abstract class Instrument {
     }
 }
 
-// Guitar Class
+// com.example.instrument_app.Guitar Class
 abstract class Guitar extends Instrument {
     public Guitar (String title, int price, String brand, String colour,
                    String condition, String location, String description, int id, int[] images)
@@ -78,8 +78,8 @@ abstract class Guitar extends Instrument {
 
 }
 
-// Acoustic Guitar Class
-class AcousticGuitar extends Instrument {
+// Acoustic com.example.instrument_app.Guitar Class
+class AcousticGuitar extends Guitar {
     public AcousticGuitar (String title, int price, String brand, String colour,
                     String condition, String location, String description, int id, int[] images)
     {
@@ -87,8 +87,8 @@ class AcousticGuitar extends Instrument {
     }
 }
 
-// Electric Guitar Class
-class ElectricGuitar extends Instrument {
+// Electric com.example.instrument_app.Guitar Class
+class ElectricGuitar extends Guitar {
     public ElectricGuitar (String title, int price, String brand, String colour,
                            String condition, String location, String description, int id,
                            int[] images)
@@ -97,7 +97,7 @@ class ElectricGuitar extends Instrument {
     }
 }
 
-// Piano Class
+// com.example.instrument_app.Piano Class
 class Piano extends Instrument {
     public Piano (String title, int price, String brand, String colour,
                    String condition, String location, String description, int id, int[] images)
@@ -106,7 +106,7 @@ class Piano extends Instrument {
     }
 }
 
-// Ukulele Class
+// com.example.instrument_app.Ukulele Class
 class Ukulele extends Instrument {
     public Ukulele (String title, int price, String brand, String colour,
                   String condition, String location, String description, int id, int[] images)
@@ -115,7 +115,7 @@ class Ukulele extends Instrument {
     }
 }
 
-// Drum Class
+// com.example.instrument_app.Drum Class
 class Drum extends Instrument {
     public Drum (String title, int price, String brand, String colour,
                   String condition, String location, String description, int id, int[] images)

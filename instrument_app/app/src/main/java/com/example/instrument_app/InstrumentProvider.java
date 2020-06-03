@@ -1,7 +1,12 @@
-// The InstrumentProvider class simulates fetching data from our static 'database' of 50
+package com.example.instrument_app;// The com.example.instrument_app.InstrumentProvider class simulates fetching data from our static 'database' of 50
 // instruments (10 instruments per category/sub-category).
 
+import com.example.instrument_app.AcousticGuitar;
+import com.example.instrument_app.Drum;
+import com.example.instrument_app.ElectricGuitar;
+import com.example.instrument_app.Piano;
 import com.example.instrument_app.R;
+import com.example.instrument_app.Ukulele;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -10,23 +15,23 @@ public class InstrumentProvider {
 
     // Titles
     static String[] titles = {
-            "Fender Acoustic Guitar","Gibson Acoustic Guitar","Takamine Acoustic Guitar",
-            "Taylor Acoustic Guitar","Martin Acoustic Guitar","Guild Acoustic Guitar",
-            "Seagull Acoustic Guitar","Yamaha Acoustic Guitar","Ovation Acoustic Guitar",
-            "Washburn Acoustic Guitar",
-            "Fender Electric Guitar","Gibson Electric Guitar","LTD Electric Guitar",
-            "PRS Electric Guitar","Gretsch Electric Guitar","Guild Electric Guitar",
-            "Jackson Electric Guitar","Yamaha Electric Guitar","Vintage Electric Guitar",
-            "Washburn Electric Guitar",
-            "C.Bechstein Piano","Bluthner Piano","Bosendorfer Piano","FAZIOLI Piano",
-            "Grotrian-Steinweg Piano","Sauter Piano","Shigeru Kawai Piano","Steinway & Sons Piano",
-            "Steingraeber & Sohne Piano","Yamaha Piano",
-            "Makala Ukulele","Kala Ukulele","Donner Ukulele","Lohanu Ukulele",
-            "Hricane Ukulele","Pomaikai Ukulele","Fender Ukulele","Lanikai Ukulele",
-            "Mahalo Ukulele","Kapono Ukulele",
+            "Fender Acoustic com.example.instrument_app.Guitar","Gibson Acoustic com.example.instrument_app.Guitar","Takamine Acoustic com.example.instrument_app.Guitar",
+            "Taylor Acoustic com.example.instrument_app.Guitar","Martin Acoustic com.example.instrument_app.Guitar","Guild Acoustic com.example.instrument_app.Guitar",
+            "Seagull Acoustic com.example.instrument_app.Guitar","Yamaha Acoustic com.example.instrument_app.Guitar","Ovation Acoustic com.example.instrument_app.Guitar",
+            "Washburn Acoustic com.example.instrument_app.Guitar",
+            "Fender Electric com.example.instrument_app.Guitar","Gibson Electric com.example.instrument_app.Guitar","LTD Electric com.example.instrument_app.Guitar",
+            "PRS Electric com.example.instrument_app.Guitar","Gretsch Electric com.example.instrument_app.Guitar","Guild Electric com.example.instrument_app.Guitar",
+            "Jackson Electric com.example.instrument_app.Guitar","Yamaha Electric com.example.instrument_app.Guitar","Vintage Electric com.example.instrument_app.Guitar",
+            "Washburn Electric com.example.instrument_app.Guitar",
+            "C.Bechstein com.example.instrument_app.Piano","Bluthner com.example.instrument_app.Piano","Bosendorfer com.example.instrument_app.Piano","FAZIOLI com.example.instrument_app.Piano",
+            "Grotrian-Steinweg com.example.instrument_app.Piano","Sauter com.example.instrument_app.Piano","Shigeru Kawai com.example.instrument_app.Piano","Steinway & Sons com.example.instrument_app.Piano",
+            "Steingraeber & Sohne com.example.instrument_app.Piano","Yamaha com.example.instrument_app.Piano",
+            "Makala com.example.instrument_app.Ukulele","Kala com.example.instrument_app.Ukulele","Donner com.example.instrument_app.Ukulele","Lohanu com.example.instrument_app.Ukulele",
+            "Hricane com.example.instrument_app.Ukulele","Pomaikai com.example.instrument_app.Ukulele","Fender com.example.instrument_app.Ukulele","Lanikai com.example.instrument_app.Ukulele",
+            "Mahalo com.example.instrument_app.Ukulele","Kapono com.example.instrument_app.Ukulele",
             "Tama Drums","DW Drums","Yamaha Drums","Sonor Drums", "Pearl Drums",
             "Ludwig Drums","Gretsch Drums","Canopus Drums","Noble & Cooley Drums",
-            "British Drum Company Drums"
+            "British com.example.instrument_app.Drum Company Drums"
     };
 
     // Prices
@@ -46,7 +51,7 @@ public class InstrumentProvider {
             "Grotrian-Steinweg","Sauter","Shigeru Kawai","Steinway & Sons","Steingraeber & Sohne","Yamaha",
             "Makala","Kala","Donner","Lohanu","Hricane","Pomaikai","Fender","Lanikai", "Mahalo",
             "Kapono","Tama","DW","Yamaha","Sonor", "Pearl","Ludwig","Gretsch","Canopus","Noble & Cooley",
-            "British Drum Company"
+            "British com.example.instrument_app.Drum Company"
     };
 
     // Colours
@@ -91,7 +96,7 @@ public class InstrumentProvider {
 
     // Descriptions
     static String[] descriptions = {
-            "Currently putting a ring on it, no time for a guitar",//Acoustic Guitar
+            "Currently putting a ring on it, no time for a guitar",//Acoustic com.example.instrument_app.Guitar
             "I'm batman(deep voice)",
             "Too strong, keep breaking the strings",
             "Will trade for the Krabby Patty Formula",
@@ -111,7 +116,7 @@ public class InstrumentProvider {
             "Got a little scratch from a hammer but otherwise all good",
             "The children just wont grow up and learn to play",
             "Doesn't play too well underwater, last guy got electrocuted",
-            "I'm going on an adventure and can't bring the piano with me",//Piano
+            "I'm going on an adventure and can't bring the piano with me",//com.example.instrument_app.Piano
             "Went through mum's closet and found this behind the coats",
             "Won this in a Butterbeer competition",
             "This piano will self destruct in 5...4...",
@@ -121,12 +126,12 @@ public class InstrumentProvider {
             "Followed a star and didn't get where I needed to but found this nice piano in an inn",
             "Already got too many pianos",
             "Got a bit soaked but had it refurbished",
-            "It just fell from the sky",//Ukulele
-            "I have a Ukulele-inator",
+            "It just fell from the sky",//com.example.instrument_app.Ukulele
+            "I have a com.example.instrument_app.Ukulele-inator",
             "Too many arrows flying around, worried it's just gonna get damaged",
             "Learnt the ukulele too quickly, onto the next instrument",
-            "Playing Ukulele is alien to me",
-            "Ukulele is too big for our home",
+            "Playing com.example.instrument_app.Ukulele is alien to me",
+            "com.example.instrument_app.Ukulele is too big for our home",
             "Not enough space ;) ",
             "A real man knows how to play the ukulele",
             "Moving house, too many crazies waving wands around here",

@@ -13,7 +13,7 @@ public class MainActivity extends AppCompatActivity {
     public static final String ACOUSTIC_GUITAR_DETAIL_KEY = "acoustic guitar";
 
     ListView lvAcousticGuitars;
-    InstrumentAdapter acousticGuitarsAdapter;
+    AcousticGuitarsAdapter acousticGuitarsAdapter;
     ArrayList<AcousticGuitar> acousticGuitars;
 
     @Override
@@ -24,9 +24,9 @@ public class MainActivity extends AppCompatActivity {
         ArrayList<AcousticGuitar> acousticGuitars = new ArrayList<AcousticGuitar>();
 
         acousticGuitars = InstrumentProvider.generateAcousticGuitars();
-        acousticGuitarAdapter = new InstrumentAdapter(this, acousticGuitars);
+        acousticGuitarsAdapter = new AcousticGuitarsAdapter(this, acousticGuitars);
 
-        lvAcousticGuitars.setAdapter(acousticGuitarAdapter);
+        lvAcousticGuitars.setAdapter(acousticGuitarsAdapter);
 
         LinearLayoutManager lm = new LinearLayoutManager(this);
 
