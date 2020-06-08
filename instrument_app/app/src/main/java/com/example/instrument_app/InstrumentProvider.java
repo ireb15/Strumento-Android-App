@@ -214,10 +214,11 @@ public class InstrumentProvider {
             String location = locations[i];
             String description = descriptions[i];
             int j=i;
-            while (j < j + 3) {
-                images3 = Arrays.copyOf(images, 3);
-                images3[j] = images[j];
+            int k = 0;
+            while (j < i + 3) {
+                images3[k] = images[j];
                 j++;
+                k++;
             }
             AcousticGuitar acousticGuitar = new AcousticGuitar(title, price, brand, colour,
                     condition, location, description, id, images3);
@@ -240,10 +241,11 @@ public class InstrumentProvider {
             String location = locations[i];
             String description = descriptions[i];
             int j=i;
-            while (j < j + 3) {
-                images3 = Arrays.copyOf(images, 3);
-                images3[j] = images[j];
+            int k = 0;
+            while (j < i + 3) {
+                images3[k] = images[j];
                 j++;
+                k++;
             }
             ElectricGuitar electricGuitar = new ElectricGuitar(title, price, brand, colour,
                     condition, location, description, id, images3);
@@ -266,10 +268,11 @@ public class InstrumentProvider {
             String location = locations[i];
             String description = descriptions[i];
             int j=i;
-            while (j < j + 3) {
-                images3 = Arrays.copyOf(images, 3);
-                images3[j] = images[j];
+            int k = 0;
+            while (j < i + 3) {
+                images3[k] = images[j];
                 j++;
+                k++;
             }
             Ukulele ukulele = new Ukulele(title, price, brand, colour,
                     condition, location, description, id, images3);
@@ -292,10 +295,11 @@ public class InstrumentProvider {
             String location = locations[i];
             String description = descriptions[i];
             int j=i;
-            while (j < j + 3) {
-                images3 = Arrays.copyOf(images, 3);
-                images3[j] = images[j];
+            int k = 0;
+            while (j < i + 3) {
+                images3[k] = images[j];
                 j++;
+                k++;
             }
             Piano piano = new Piano(title, price, brand, colour,
                     condition, location, description, id, images3);
@@ -318,10 +322,11 @@ public class InstrumentProvider {
             String location = locations[i];
             String description = descriptions[i];
             int j=i;
-            while (j < j + 3) {
-                images3 = Arrays.copyOf(images, 3);
-                images3[j] = images[j];
+            int k = 0;
+            while (j < i + 3) {
+                images3[k] = images[j];
                 j++;
+                k++;
             }
             Drum drum = new Drum(title, price, brand, colour,
                     condition, location, description, id, images3);

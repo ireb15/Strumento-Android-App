@@ -50,7 +50,8 @@ public class AcousticGuitarsAdapter extends ArrayAdapter<AcousticGuitar> {
         //Populate the data into the template view using the data object
         viewHolder.tvTitle.setText(acousticGuitar.getTitle());
         viewHolder.tvDescription.setText(acousticGuitar.getDescription());
-        int resID = acousticGuitar.getId();
+        int[] images = acousticGuitar.getImages();
+        int resID = images[0];
         viewHolder.ivAcousticGuitar.setImageResource(resID);
         return convertView;
     }
