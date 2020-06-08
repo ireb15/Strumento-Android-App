@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 public class InstrumentProvider {
-
+    //What is com.example?
     // Titles
     static String[] titles = {
             "Fender Acoustic com.example.instrument_app.Guitar","Gibson Acoustic com.example.instrument_app.Guitar","Takamine Acoustic com.example.instrument_app.Guitar",
