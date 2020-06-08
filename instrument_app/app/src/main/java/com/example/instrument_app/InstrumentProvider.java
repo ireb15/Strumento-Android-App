@@ -8,7 +8,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 public class InstrumentProvider {
-    //What is com.example?
     // Titles
     static String[] titles = {
             "Fender Acoustic Guitar","Gibson Acoustic Guitar","Takamine Acoustic Guitar",
@@ -230,7 +229,7 @@ public class InstrumentProvider {
     public static ArrayList<ElectricGuitar> generateElectricGuitars() {
         ArrayList<ElectricGuitar> electricGuitars = new ArrayList<ElectricGuitar>();
         int[] images3 = new int[3];
-        for (int i = 9; i < 18; i++) {
+        for (int i = 10; i < 20; i++) {
             int id = i + 1;
             String title = titles[i];
             int price = prices[i];
@@ -257,7 +256,7 @@ public class InstrumentProvider {
     public static ArrayList<Ukulele> generateUkuleles() {
         ArrayList<Ukulele> ukuleles = new ArrayList<Ukulele>();
         int[] images3 = new int[3];
-        for (int i = 18; i < 27; i++) {
+        for (int i = 20; i < 30; i++) {
             int id = i + 1;
             String title = titles[i];
             int price = prices[i];
@@ -284,7 +283,7 @@ public class InstrumentProvider {
     public static ArrayList<Piano> generatePianos() {
         ArrayList<Piano> pianos = new ArrayList<Piano>();
         int[] images3 = new int[3];
-        for (int i = 27; i < 36; i++) {
+        for (int i = 30; i < 40; i++) {
             int id = i + 1;
             String title = titles[i];
             int price = prices[i];
@@ -311,7 +310,7 @@ public class InstrumentProvider {
     public static ArrayList<Drum> generateDrums() {
         ArrayList<Drum> drums = new ArrayList<Drum>();
         int[] images3 = new int[3];
-        for (int i = 36; i < 45; i++) {
+        for (int i = 40; i < 50; i++) {
             int id = i + 1;
             String title = titles[i];
             int price = prices[i];
