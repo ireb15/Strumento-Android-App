@@ -11,23 +11,22 @@ public class InstrumentProvider {
     //What is com.example?
     // Titles
     static String[] titles = {
-            "Fender Acoustic com.example.instrument_app.Guitar","Gibson Acoustic com.example.instrument_app.Guitar","Takamine Acoustic com.example.instrument_app.Guitar",
-            "Taylor Acoustic com.example.instrument_app.Guitar","Martin Acoustic com.example.instrument_app.Guitar","Guild Acoustic com.example.instrument_app.Guitar",
-            "Seagull Acoustic com.example.instrument_app.Guitar","Yamaha Acoustic com.example.instrument_app.Guitar","Ovation Acoustic com.example.instrument_app.Guitar",
-            "Washburn Acoustic com.example.instrument_app.Guitar",
-            "Fender Electric com.example.instrument_app.Guitar","Gibson Electric com.example.instrument_app.Guitar","LTD Electric com.example.instrument_app.Guitar",
-            "PRS Electric com.example.instrument_app.Guitar","Gretsch Electric com.example.instrument_app.Guitar","Guild Electric com.example.instrument_app.Guitar",
-            "Jackson Electric com.example.instrument_app.Guitar","Yamaha Electric com.example.instrument_app.Guitar","Vintage Electric com.example.instrument_app.Guitar",
-            "Washburn Electric com.example.instrument_app.Guitar",
-            "C.Bechstein com.example.instrument_app.Piano","Bluthner com.example.instrument_app.Piano","Bosendorfer com.example.instrument_app.Piano","FAZIOLI com.example.instrument_app.Piano",
-            "Grotrian-Steinweg com.example.instrument_app.Piano","Sauter com.example.instrument_app.Piano","Shigeru Kawai com.example.instrument_app.Piano","Steinway & Sons com.example.instrument_app.Piano",
-            "Steingraeber & Sohne com.example.instrument_app.Piano","Yamaha com.example.instrument_app.Piano",
-            "Makala com.example.instrument_app.Ukulele","Kala com.example.instrument_app.Ukulele","Donner com.example.instrument_app.Ukulele","Lohanu com.example.instrument_app.Ukulele",
-            "Hricane com.example.instrument_app.Ukulele","Pomaikai com.example.instrument_app.Ukulele","Fender com.example.instrument_app.Ukulele","Lanikai com.example.instrument_app.Ukulele",
-            "Mahalo com.example.instrument_app.Ukulele","Kapono com.example.instrument_app.Ukulele",
+            "Fender Acoustic Guitar","Gibson Acoustic Guitar","Takamine Acoustic Guitar",
+            "Taylor Acoustic Guitar", "Martin Acoustic Guitar","Guild Acoustic Guitar",
+            "Seagull Acoustic Guitar","Yamaha Acoustic Guitar","Ovation Acoustic Guitar",
+            "Washburn Acoustic Guitar",
+            "Fender Electric Guitar","Gibson Electric Guitar","LTD Electric Guitar",
+            "PRS Electric Guitar","Gretsch Electric Guitar","Guild Electric Guitar",
+            "Jackson Electric Guitar","Yamaha Electric Guitar","Vintage Electric Guitar",
+            "Washburn Electric Guitar",
+            "C.Bechstein Piano","Bluthner Piano","Bosendorfer Piano","FAZIOLI Piano",
+            "Grotrian-Steinweg Piano","Sauter Piano","Shigeru Kawai Piano","Steinway & Sons Piano",
+            "Steingraeber & Sohne Piano","Yamaha Piano",
+            "Makala Ukulele","Kala Ukulele","Donner Ukulele","Lohanu Ukulele","Hricane Ukulele",
+            "Pomaikai Ukulele","Fender Ukulele","Lanikai Ukulele","Mahalo Ukulele","Kapono Ukulele",
             "Tama Drums","DW Drums","Yamaha Drums","Sonor Drums", "Pearl Drums",
             "Ludwig Drums","Gretsch Drums","Canopus Drums","Noble & Cooley Drums",
-            "British com.example.instrument_app.Drum Company Drums"
+            "British Drum Company Drums"
     };
 
     // Prices
