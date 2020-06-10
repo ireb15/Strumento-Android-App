@@ -197,15 +197,12 @@ public class InstrumentProvider {
             R.drawable.noble_cooley_drums3, R.drawable.british_drum_company_drums_1,
             R.drawable.british_drum_company_drums_2, R.drawable.british_drum_company_drums_3};
 
-    // Image index needs to be global.
-    static int imgIndex = 0;
-
     // Generate data for Acoustic Guitars
     public static ArrayList<AcousticGuitar> generateAcousticGuitars() {
         ArrayList<AcousticGuitar> acousticGuitars = new ArrayList<AcousticGuitar>();
 
+        int[] images3 = new int[3];
         for (int i = 0; i < 10; i++) {
-            int[] images3 = new int[3];
             int id = i + 1;
             String title = titles[i];
             int price = prices[i];
@@ -214,9 +211,12 @@ public class InstrumentProvider {
             String condition = conditions[i];
             String location = locations[i];
             String description = descriptions[i];
-            for (int j = 0; j < 3; j++) {
-                images3[j] = images[imgIndex];
-                imgIndex++;
+            int j=i;
+            int k = 0;
+            while (j < i + 3) {
+                images3[k] = images[j];
+                j++;
+                k++;
             }
             AcousticGuitar acousticGuitar = new AcousticGuitar(title, price, brand, colour,
                     condition, location, description, id, images3);
