@@ -3,7 +3,10 @@ package com.example.instrument_app;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import java.util.ArrayList;
@@ -29,6 +32,18 @@ public class MainActivity extends AppCompatActivity {
         lvAcousticGuitars.setAdapter(acousticGuitarsAdapter);
 
         LinearLayoutManager lm = new LinearLayoutManager(this);
+        setupInstrumentSelectedListener();
+    }
 
+    public void setupInstrumentSelectedListener() {
+        lvAcousticGuitars.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                // Launch the detail view passing instrument as an extra
+                Intent intent = new Intent(MainActivity.this, InstrumentDetailActivity.class);
+                intent.putExtra(ACOUSTIC_GUITAR_DETAIL_KEY, acousticGuitarsAdapter.getItem(position));
+                startActivity(intent);
+            }
+        });
     }
 }

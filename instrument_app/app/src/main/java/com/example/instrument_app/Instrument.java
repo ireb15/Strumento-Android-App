@@ -1,7 +1,9 @@
 package com.example.instrument_app;//com.example.instrument_app.Instrument App Classes
 
+import java.io.Serializable;
+
 // com.example.instrument_app.Instrument Class
-public abstract class Instrument {
+public abstract class Instrument implements Serializable {
     private String title;
     private int price;
     private String brand;
