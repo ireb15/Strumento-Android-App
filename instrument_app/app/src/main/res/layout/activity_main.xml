@@ -8,12 +8,10 @@
     android:padding="16dp"
     tools:context=".MainActivity">
 
-
-
     <ListView
         android:id="@+id/lvAcousticGuitars"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
-
+        android:layout_height="match_parent"
+        android:dividerHeight="10dp"/>
 
 </LinearLayout>
