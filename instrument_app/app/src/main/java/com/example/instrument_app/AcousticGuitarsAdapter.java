@@ -47,7 +47,7 @@ public class AcousticGuitarsAdapter extends ArrayAdapter<AcousticGuitar> {
         viewHolder.tvTitle.setText(acousticGuitar.getTitle());
         viewHolder.tvDescription.setText(acousticGuitar.getDescription());
         int[] images = acousticGuitar.getImages();
-        int resID = images[1];
+        int resID = images[0];
         viewHolder.ivAcousticGuitar.setImageResource(resID);
         return convertView;
     }

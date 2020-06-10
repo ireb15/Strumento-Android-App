@@ -197,12 +197,14 @@ public class InstrumentProvider {
             R.drawable.noble_cooley_drums3, R.drawable.british_drum_company_drums_1,
             R.drawable.british_drum_company_drums_2, R.drawable.british_drum_company_drums_3};
 
+    private static int incrImages = 0;
+
     // Generate data for Acoustic Guitars
     public static ArrayList<AcousticGuitar> generateAcousticGuitars() {
         ArrayList<AcousticGuitar> acousticGuitars = new ArrayList<AcousticGuitar>();
 
-        int[] images3 = new int[3];
         for (int i = 0; i < 10; i++) {
+            int[] images3 = new int[3];
             int id = i + 1;
             String title = titles[i];
             int price = prices[i];
@@ -211,12 +213,9 @@ public class InstrumentProvider {
             String condition = conditions[i];
             String location = locations[i];
             String description = descriptions[i];
-            int j=i;
-            int k = 0;
-            while (j < i + 3) {
-                images3[k] = images[j];
-                j++;
-                k++;
+            for (int j = 0; j < 3; j++) {
+                images3[j] = images[incrImages];
+                incrImages++;
             }
             AcousticGuitar acousticGuitar = new AcousticGuitar(title, price, brand, colour,
                     condition, location, description, id, images3);
@@ -228,8 +227,8 @@ public class InstrumentProvider {
     // Generate data for Electric Guitars
     public static ArrayList<ElectricGuitar> generateElectricGuitars() {
         ArrayList<ElectricGuitar> electricGuitars = new ArrayList<ElectricGuitar>();
-        int[] images3 = new int[3];
         for (int i = 10; i < 20; i++) {
+            int[] images3 = new int[3];
             int id = i + 1;
             String title = titles[i];
             int price = prices[i];
@@ -238,12 +237,9 @@ public class InstrumentProvider {
             String condition = conditions[i];
             String location = locations[i];
             String description = descriptions[i];
-            int j=i;
-            int k = 0;
-            while (j < i + 3) {
-                images3[k] = images[j];
-                j++;
-                k++;
+            for (int j = 0; j < 3; j++) {
+                images3[j] = images[incrImages];
+                incrImages++;
             }
             ElectricGuitar electricGuitar = new ElectricGuitar(title, price, brand, colour,
                     condition, location, description, id, images3);
@@ -255,8 +251,8 @@ public class InstrumentProvider {
     // Generate data for Ukuleles
     public static ArrayList<Ukulele> generateUkuleles() {
         ArrayList<Ukulele> ukuleles = new ArrayList<Ukulele>();
-        int[] images3 = new int[3];
         for (int i = 20; i < 30; i++) {
+            int[] images3 = new int[3];
             int id = i + 1;
             String title = titles[i];
             int price = prices[i];
@@ -265,12 +261,9 @@ public class InstrumentProvider {
             String condition = conditions[i];
             String location = locations[i];
             String description = descriptions[i];
-            int j=i;
-            int k = 0;
-            while (j < i + 3) {
-                images3[k] = images[j];
-                j++;
-                k++;
+            for (int j = 0; j < 3; j++) {
+                images3[j] = images[incrImages];
+                incrImages++;
             }
             Ukulele ukulele = new Ukulele(title, price, brand, colour,
                     condition, location, description, id, images3);
@@ -282,8 +275,8 @@ public class InstrumentProvider {
     // Generate data for Pianos
     public static ArrayList<Piano> generatePianos() {
         ArrayList<Piano> pianos = new ArrayList<Piano>();
-        int[] images3 = new int[3];
         for (int i = 30; i < 40; i++) {
+            int[] images3 = new int[3];
             int id = i + 1;
             String title = titles[i];
             int price = prices[i];
@@ -292,12 +285,9 @@ public class InstrumentProvider {
             String condition = conditions[i];
             String location = locations[i];
             String description = descriptions[i];
-            int j=i;
-            int k = 0;
-            while (j < i + 3) {
-                images3[k] = images[j];
-                j++;
-                k++;
+            for (int j = 0; j < 3; j++) {
+                images3[j] = images[incrImages];
+                incrImages++;
             }
             Piano piano = new Piano(title, price, brand, colour,
                     condition, location, description, id, images3);
@@ -309,8 +299,8 @@ public class InstrumentProvider {
     // Generate data for Drums
     public static ArrayList<Drum> generateDrums() {
         ArrayList<Drum> drums = new ArrayList<Drum>();
-        int[] images3 = new int[3];
         for (int i = 40; i < 50; i++) {
+            int[] images3 = new int[3];
             int id = i + 1;
             String title = titles[i];
             int price = prices[i];
@@ -319,12 +309,9 @@ public class InstrumentProvider {
             String condition = conditions[i];
             String location = locations[i];
             String description = descriptions[i];
-            int j=i;
-            int k = 0;
-            while (j < i + 3) {
-                images3[k] = images[j];
-                j++;
-                k++;
+            for (int j = 0; j < 3; j++) {
+                images3[j] = images[incrImages];
+                incrImages++;
             }
             Drum drum = new Drum(title, price, brand, colour,
                     condition, location, description, id, images3);

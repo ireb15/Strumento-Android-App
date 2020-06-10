@@ -22,7 +22,7 @@ import java.util.Scanner;
 
 public class MainActivity extends AppCompatActivity {
 
-    public static final String ACOUSTIC_GUITAR_DETAIL_KEY = "acoustic guitar";
+    public static final String INSTRUMENT_DETAIL_KEY = "instrument";
 
     ListView lvAcousticGuitars;
     AcousticGuitarsAdapter acousticGuitarsAdapter;
@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        lvAcousticGuitars = (ListView) findViewById(R.id.lvAcousticGuitars);
+        lvAcousticGuitars = findViewById(R.id.lvAcousticGuitars);
         ArrayList<AcousticGuitar> acousticGuitars = new ArrayList<AcousticGuitar>();
 
         acousticGuitars = InstrumentProvider.generateAcousticGuitars();
@@ -51,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 // Launch the detail view passing instrument as an extra
                 Intent intent = new Intent(MainActivity.this, InstrumentDetailActivity.class);
-                intent.putExtra(ACOUSTIC_GUITAR_DETAIL_KEY, acousticGuitarsAdapter.getItem(position));
+                intent.putExtra(INSTRUMENT_DETAIL_KEY, acousticGuitarsAdapter.getItem(position));
                 startActivity(intent);
             }
         });
