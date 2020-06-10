@@ -22,7 +22,7 @@ public class InstrumentDetailActivity extends AppCompatActivity {
         Intent thisIntent = getIntent();
         // Use the instrument to populate the data into our views
         AcousticGuitar acousticGuitar = (AcousticGuitar)
-                thisIntent.getSerializableExtra(MainActivity.INSTRUMENT_DETAIL_KEY);
+                thisIntent.getSerializableExtra(MainActivity.ACOUSTIC_GUITAR_DETAIL_KEY);
         loadAcousticGuitar(acousticGuitar);
     }
     private void loadAcousticGuitar(AcousticGuitar acousticGuitar) {

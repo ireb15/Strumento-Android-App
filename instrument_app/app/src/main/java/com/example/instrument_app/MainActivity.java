@@ -6,7 +6,6 @@ import androidx.core.view.MenuItemCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
 import android.content.Intent;
-import android.os.Bundle;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Parcelable;
@@ -22,9 +21,9 @@ import java.util.Scanner;
 
 public class MainActivity extends AppCompatActivity {
 
-    public static final String INSTRUMENT_DETAIL_KEY = "instrument";
+    public static final String ACOUSTIC_GUITAR_DETAIL_KEY = "acoustic guitar";
 
-    ListView lvAcousticGuitars;
+    ListView lvAcousticGuitar;
     AcousticGuitarsAdapter acousticGuitarsAdapter;
     ArrayList<AcousticGuitar> acousticGuitars;
 
@@ -33,29 +32,34 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        lvAcousticGuitars = findViewById(R.id.lvAcousticGuitars);
+        lvAcousticGuitar = (ListView) findViewById(R.id.lvAcousticGuitars);
         ArrayList<AcousticGuitar> acousticGuitars = new ArrayList<AcousticGuitar>();
+
 
         acousticGuitars = InstrumentProvider.generateAcousticGuitars();
         acousticGuitarsAdapter = new AcousticGuitarsAdapter(this, acousticGuitars);
 
-        lvAcousticGuitars.setAdapter(acousticGuitarsAdapter);
+
+        lvAcousticGuitar.setAdapter(acousticGuitarsAdapter);
 
         LinearLayoutManager lm = new LinearLayoutManager(this);
-        setupInstrumentSelectedListener();
+
+        setupAcousticGuitarSelectedListener();
+
     }
 
-    public void setupInstrumentSelectedListener() {
-        lvAcousticGuitars.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+    public void setupAcousticGuitarSelectedListener() {
+        lvAcousticGuitar.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                // Launch the detail view passing instrument as an extra
+                // Launch the detail view passing book as an extra
                 Intent intent = new Intent(MainActivity.this, InstrumentDetailActivity.class);
-                intent.putExtra(INSTRUMENT_DETAIL_KEY, acousticGuitarsAdapter.getItem(position));
+                intent.putExtra(ACOUSTIC_GUITAR_DETAIL_KEY, acousticGuitarsAdapter.getItem(position));
                 startActivity(intent);
             }
         });
     }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -87,6 +91,24 @@ public class MainActivity extends AppCompatActivity {
         });
         return true;
     }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+
+        //noinspection SimplifiableIfStatement
+        if (id == R.id.action_search) {
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
+
+
 
 }
 
