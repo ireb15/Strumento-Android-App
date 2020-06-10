@@ -7,10 +7,6 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
-
-import com.example.instrument_app.AcousticGuitar;
-import com.example.instrument_app.R;
-
 import java.util.ArrayList;
 
 public class AcousticGuitarsAdapter extends ArrayAdapter<AcousticGuitar> {
@@ -51,7 +47,7 @@ public class AcousticGuitarsAdapter extends ArrayAdapter<AcousticGuitar> {
         viewHolder.tvTitle.setText(acousticGuitar.getTitle());
         viewHolder.tvDescription.setText(acousticGuitar.getDescription());
         int[] images = acousticGuitar.getImages();
-        int resID = images[0];
+        int resID = images[1];
         viewHolder.ivAcousticGuitar.setImageResource(resID);
         return convertView;
     }
