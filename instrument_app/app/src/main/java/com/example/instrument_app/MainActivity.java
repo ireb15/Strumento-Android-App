@@ -48,6 +48,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+
     public void setupAcousticGuitarSelectedListener() {
         lvAcousticGuitar.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -78,6 +79,7 @@ public class MainActivity extends AppCompatActivity {
                 searchItem.collapseActionView();
 
                 //complete SearchActivity by yourself
+
 
                 // Set activity title to search query
                 MainActivity.this.setTitle(query);
