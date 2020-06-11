@@ -5,13 +5,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="16dp"
     tools:context=".MainActivity">
 
     <ListView
         android:id="@+id/lvAcousticGuitars"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:dividerHeight="10dp"/>
+        android:dividerHeight="10sp"
+        android:padding="16dp"
+        android:divider="@android:color/transparent"
+        android:background="#EEEEEE"/>
 
 </LinearLayout>

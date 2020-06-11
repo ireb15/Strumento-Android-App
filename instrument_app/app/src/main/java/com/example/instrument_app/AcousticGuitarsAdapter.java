@@ -35,7 +35,7 @@ public class AcousticGuitarsAdapter extends ArrayAdapter<AcousticGuitar> {
         if (convertView == null) {
             viewHolder = new ViewHolder();
             LayoutInflater inflater = (LayoutInflater) getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            convertView = inflater.inflate(R.layout.item_acoustic_guitar, parent, false);
+            convertView = inflater.inflate(R.layout.instrument_list_view_item, parent, false);
             viewHolder.ivAcousticGuitar = (ImageView) convertView.findViewById(R.id.ivAcousticGuitarCover);
             viewHolder.tvTitle = (TextView) convertView.findViewById(R.id.tvTitle);
             viewHolder.tvDescription = (TextView) convertView.findViewById(R.id.tvDescription);
