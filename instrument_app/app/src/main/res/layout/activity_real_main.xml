@@ -12,37 +12,95 @@
         android:layout_height="match_parent"
         android:padding="16dp">
 
-        <ScrollView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-            
-        <LinearLayout
-            android:id="@+id/llSearchBox"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:orientation="horizontal"
-            android:background="#EEEEEE"/>
+            <LinearLayout
+                android:id="@+id/llSearchBox"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:orientation="horizontal"
+                android:background="#EEEEEE"/>
 
-        <LinearLayout
-            android:id="@+id/llTopPicks"
-            android:layout_width="match_parent"
-            android:layout_height="128dp"
-            android:layout_below="@id/llSearchBox"
-            android:layout_marginTop="16dp"
-            android:background="#EEEEEE"/>
+            <LinearLayout
+                android:id="@+id/llTopPicks"
+                android:layout_width="match_parent"
+                android:layout_height="128dp"
+                android:layout_below="@id/llSearchBox"
+                android:layout_marginTop="16dp"
+                android:background="#EEEEEE"
+                android:orientation="vertical" />
 
-        <ListView
-            android:id="@+id/lvAcousticGuitars"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:dividerHeight="16sp"
-            android:padding="16dp"
-            android:divider="@android:color/transparent"
-            android:background="#EEEEEE"
-            android:layout_weight="1"
-            android:layout_marginTop="15dp"
-            android:layout_below="@+id/llTopPicks"/>
+            <LinearLayout
+                android:id="@+id/llAcousticGuitarCategory"
+                android:layout_width="match_parent"
+                android:layout_height="136dp"
+                android:orientation="horizontal"
+                android:padding="16dp"
+                android:background="#EEEEEE"
+                android:layout_below="@id/llTopPicks"
+                android:layout_marginTop="16dp">
 
-        </ScrollView>
-    </RelativeLayout>
+                <ImageView
+                    android:id="@+id/ivAcousticGuitarGlyph"
+                    android:layout_width="112dp"
+                    android:layout_height="104dp" />
+
+                <TextView
+                    android:id="@+id/tvAcousticGuitar"
+                    android:layout_width="match_parent"
+                    android:layout_height="104dp"
+                    android:gravity="center"
+                    android:text="text"
+                    android:textSize="20sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/llElectricGuitarCategory"
+                android:layout_width="match_parent"
+                android:layout_height="136dp"
+                android:orientation="horizontal"
+                android:padding="16dp"
+                android:background="#EEEEEE"
+                android:layout_below="@id/llAcousticGuitarCategory"
+                android:layout_marginTop="16dp">
+
+                <ImageView
+                    android:id="@+id/ivElectricGuitarGlyph"
+                    android:layout_width="112dp"
+                    android:layout_height="104dp" />
+
+                <TextView
+                    android:id="@+id/tvElectricGuitar"
+                    android:layout_width="match_parent"
+                    android:layout_height="104dp"
+                    android:gravity="center"
+                    android:text="text"
+                    android:textSize="20sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/llPianoCategory"
+                android:layout_width="match_parent"
+                android:layout_height="136dp"
+                android:orientation="horizontal"
+                android:padding="16dp"
+                android:background="#EEEEEE"
+                android:layout_below="@id/llElectricGuitarCategory"
+                android:layout_marginTop="16dp">
+
+                <ImageView
+                    android:id="@+id/ivPianoGlyph"
+                    android:layout_width="112dp"
+                    android:layout_height="104dp" />
+
+                <TextView
+                    android:id="@+id/tvPiano"
+                    android:layout_width="match_parent"
+                    android:layout_height="104dp"
+                    android:gravity="center"
+                    android:text="text"
+                    android:textSize="20sp" />
+
+            </LinearLayout>
+        </RelativeLayout>
 </LinearLayout>
