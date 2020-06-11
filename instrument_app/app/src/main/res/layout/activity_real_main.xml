@@ -12,6 +12,10 @@
         android:layout_height="match_parent"
         android:padding="16dp">
 
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            
         <LinearLayout
             android:id="@+id/llSearchBox"
             android:layout_width="match_parent"
@@ -25,18 +29,20 @@
             android:layout_height="128dp"
             android:layout_below="@id/llSearchBox"
             android:layout_marginTop="16dp"
-            android:background="#EEEEEE"
-            android:orientation="vertical" />
+            android:background="#EEEEEE"/>
 
         <ListView
             android:id="@+id/lvAcousticGuitars"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:dividerHeight="16sp"
+            android:padding="16dp"
             android:divider="@android:color/transparent"
+            android:background="#EEEEEE"
             android:layout_weight="1"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="15dp"
             android:layout_below="@+id/llTopPicks"/>
 
+        </ScrollView>
     </RelativeLayout>
 </LinearLayout>
