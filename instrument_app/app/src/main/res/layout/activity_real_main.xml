@@ -5,19 +5,42 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context=".ListActivity">
 
-    <RelativeLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:padding="16dp">
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="16dp">
 
             <LinearLayout
                 android:id="@+id/llSearchBox"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:orientation="horizontal"
-                android:background="#EEEEEE"/>
+                android:background="#EEEEEE">
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"/>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:text="Search"
+                    android:layout_gravity="center"
+                    android:layout_weight="5"/>
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_weight="1"/>
+
+            </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/llTopPicks"
@@ -26,81 +49,195 @@
                 android:layout_below="@id/llSearchBox"
                 android:layout_marginTop="16dp"
                 android:background="#EEEEEE"
-                android:orientation="vertical" />
+                android:orientation="vertical" >
 
-            <LinearLayout
-                android:id="@+id/llAcousticGuitarCategory"
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:text="TOP PICKS"
+                    android:layout_gravity="center"
+                    android:textSize="18sp"/>
+
+                <HorizontalScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="5">
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/AcousticGuitarTopPick"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:elevation="4dp" >
+                    </androidx.cardview.widget.CardView>
+
+                </HorizontalScrollView>
+            </LinearLayout>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/AcousticGuitarCategory"
                 android:layout_width="match_parent"
                 android:layout_height="136dp"
-                android:orientation="horizontal"
-                android:padding="16dp"
-                android:background="#EEEEEE"
+                android:elevation="4dp"
+                app:cardCornerRadius="12dp"
                 android:layout_below="@id/llTopPicks"
                 android:layout_marginTop="16dp">
 
-                <ImageView
-                    android:id="@+id/ivAcousticGuitarGlyph"
-                    android:layout_width="112dp"
-                    android:layout_height="104dp" />
-
-                <TextView
-                    android:id="@+id/tvAcousticGuitar"
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="104dp"
-                    android:gravity="center"
-                    android:text="text"
-                    android:textSize="20sp" />
+                    android:layout_height="136dp"
+                    android:orientation="horizontal"
+                    android:padding="16dp"
+                    android:background="#EEEEEE">
 
-            </LinearLayout>
+                    <ImageView
+                        android:id="@+id/ivAcousticGuitarGlyph"
+                        android:layout_width="112dp"
+                        android:layout_height="104dp"
+                        android:src="@drawable/fender_acoustic_1" />
 
-            <LinearLayout
-                android:id="@+id/llElectricGuitarCategory"
+                    <TextView
+                        android:id="@+id/tvAcousticGuitar"
+                        android:layout_width="match_parent"
+                        android:layout_height="104dp"
+                        android:gravity="center"
+                        android:text="Acoustic Guitars"
+                        android:textSize="20sp" />
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/ElectricGuitarCategory"
                 android:layout_width="match_parent"
                 android:layout_height="136dp"
-                android:orientation="horizontal"
-                android:padding="16dp"
-                android:background="#EEEEEE"
-                android:layout_below="@id/llAcousticGuitarCategory"
-                android:layout_marginTop="16dp">
+                android:elevation="4dp"
+                app:cardCornerRadius="12dp"
+                android:layout_below="@id/AcousticGuitarCategory"
+                android:layout_marginTop="16dp" >
 
-                <ImageView
-                    android:id="@+id/ivElectricGuitarGlyph"
-                    android:layout_width="112dp"
-                    android:layout_height="104dp" />
-
-                <TextView
-                    android:id="@+id/tvElectricGuitar"
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="104dp"
-                    android:gravity="center"
-                    android:text="text"
-                    android:textSize="20sp" />
+                    android:layout_height="136dp"
+                    android:orientation="horizontal"
+                    android:padding="16dp"
+                    android:background="#EEEEEE">
 
-            </LinearLayout>
+                    <ImageView
+                        android:id="@+id/ivElectricGuitarGlyph"
+                        android:layout_width="112dp"
+                        android:layout_height="104dp"
+                        android:src="@drawable/fender_electric_1"/>
 
-            <LinearLayout
-                android:id="@+id/llPianoCategory"
+                    <TextView
+                        android:id="@+id/tvElectricGuitar"
+                        android:layout_width="match_parent"
+                        android:layout_height="104dp"
+                        android:gravity="center"
+                        android:text="Electric Guitars"
+                        android:textSize="20sp" />
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/PianoCategory"
                 android:layout_width="match_parent"
                 android:layout_height="136dp"
-                android:orientation="horizontal"
-                android:padding="16dp"
-                android:background="#EEEEEE"
-                android:layout_below="@id/llElectricGuitarCategory"
+                android:elevation="4dp"
+                app:cardCornerRadius="12dp"
+                android:layout_below="@id/ElectricGuitarCategory"
                 android:layout_marginTop="16dp">
 
-                <ImageView
-                    android:id="@+id/ivPianoGlyph"
-                    android:layout_width="112dp"
-                    android:layout_height="104dp" />
-
-                <TextView
-                    android:id="@+id/tvPiano"
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="104dp"
-                    android:gravity="center"
-                    android:text="text"
-                    android:textSize="20sp" />
+                    android:layout_height="136dp"
+                    android:orientation="horizontal"
+                    android:padding="16dp"
+                    android:background="#EEEEEE">
 
-            </LinearLayout>
+                    <ImageView
+                        android:id="@+id/ivPianoGlyph"
+                        android:layout_width="112dp"
+                        android:layout_height="104dp"
+                        android:src="@drawable/c_bechstein_piano_1"/>
+
+                    <TextView
+                        android:id="@+id/tvPiano"
+                        android:layout_width="match_parent"
+                        android:layout_height="104dp"
+                        android:gravity="center"
+                        android:text="Pianos"
+                        android:textSize="20sp" />
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/UkuleleCategory"
+                android:layout_width="match_parent"
+                android:layout_height="136dp"
+                android:elevation="4dp"
+                app:cardCornerRadius="12dp"
+                android:layout_below="@id/PianoCategory"
+                android:layout_marginTop="16dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="136dp"
+                    android:orientation="horizontal"
+                    android:padding="16dp"
+                    android:background="#EEEEEE">
+
+                    <ImageView
+                        android:id="@+id/ivUluleleGlyph"
+                        android:layout_width="112dp"
+                        android:layout_height="104dp"
+                        android:src="@drawable/makala_ukulele1"/>
+
+                    <TextView
+                        android:id="@+id/tvUkulele"
+                        android:layout_width="match_parent"
+                        android:layout_height="104dp"
+                        android:gravity="center"
+                        android:text="Ukuleles"
+                        android:textSize="20sp" />
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/DrumsCategory"
+                android:layout_width="match_parent"
+                android:layout_height="136dp"
+                android:elevation="4dp"
+                app:cardCornerRadius="12dp"
+                android:layout_below="@id/UkuleleCategory"
+                android:layout_marginTop="16dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="136dp"
+                    android:orientation="horizontal"
+                    android:padding="16dp"
+                    android:background="#EEEEEE">
+
+                    <ImageView
+                        android:id="@+id/ivDrumsGlyph"
+                        android:layout_width="112dp"
+                        android:layout_height="104dp"
+                        android:src="@drawable/tama_drums1"/>
+
+                    <TextView
+                        android:id="@+id/tvDrums"
+                        android:layout_width="match_parent"
+                        android:layout_height="104dp"
+                        android:gravity="center"
+                        android:text="Drums"
+                        android:textSize="20sp" />
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
         </RelativeLayout>
+    </ScrollView>
 </LinearLayout>
