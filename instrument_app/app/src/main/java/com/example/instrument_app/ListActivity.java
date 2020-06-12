@@ -26,7 +26,7 @@ public class ListActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_list);
 
         lvAcousticGuitar = (ListView) findViewById(R.id.lvAcousticGuitars);
         ArrayList<AcousticGuitar> acousticGuitars = new ArrayList<AcousticGuitar>();
