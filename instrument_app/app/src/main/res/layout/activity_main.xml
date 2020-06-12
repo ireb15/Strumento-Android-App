@@ -5,16 +5,91 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context=".ListActivity">
 
-
-    <ListView
-        android:id="@+id/lvAcousticGuitars"
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:dividerHeight="10sp"
-        android:padding="16dp"
-        android:divider="@android:color/transparent"
-        android:background="#F2FDE4"/>
+        android:padding="16dp">
 
+
+        <LinearLayout
+            android:id="@+id/llSearchBox"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:orientation="horizontal"
+            android:background="#EEEEEE">
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:text="Search"
+                android:layout_gravity="center"
+                android:layout_weight="5"/>
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llTopPicks"
+            android:layout_width="match_parent"
+            android:layout_height="128dp"
+            android:layout_below="@id/llSearchBox"
+            android:layout_marginTop="16dp"
+            android:background="#EEEEEE"
+            android:orientation="vertical" >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:text="Top Picks"
+                android:layout_gravity="center"
+                android:textSize="18sp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="3"
+                android:orientation="horizontal" >
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <ListView
+            android:id="@+id/lvAcousticGuitars"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:dividerHeight="16sp"
+            android:divider="@android:color/transparent"
+            android:layout_weight="1"
+            android:layout_marginTop="16dp"
+            android:layout_below="@+id/llTopPicks"/>
+
+    </RelativeLayout>
 </LinearLayout>
