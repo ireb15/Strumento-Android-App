@@ -14,7 +14,6 @@ public class AcousticGuitarsAdapter extends ArrayAdapter<AcousticGuitar> {
      private static class ViewHolder{
            public ImageView ivAcousticGuitar;
            public TextView  tvTitle;
-           public TextView tvDescription;
            public TextView tvPrice;
      }
 
@@ -40,15 +39,13 @@ public class AcousticGuitarsAdapter extends ArrayAdapter<AcousticGuitar> {
             viewHolder.ivAcousticGuitar = (ImageView) convertView.findViewById(R.id.ivAcousticGuitarCover);
             viewHolder.tvTitle = (TextView) convertView.findViewById(R.id.tvTitle);
             viewHolder.tvPrice = (TextView) convertView.findViewById(R.id.tvPrice);
-            viewHolder.tvDescription = (TextView) convertView.findViewById(R.id.tvDescription);
             convertView.setTag(viewHolder);
         } else {
             viewHolder = (ViewHolder) convertView.getTag();
         }
         //Populate the data into the template view using the data object
         viewHolder.tvTitle.setText(acousticGuitar.getTitle());
-        viewHolder.tvDescription.setText(acousticGuitar.getDescription());
-        viewHolder.tvPrice.setText(acousticGuitar.getPrice());
+        viewHolder.tvPrice.setText("$" + acousticGuitar.getPrice());
         int[] images = acousticGuitar.getImages();
         int resID = images[0];
         viewHolder.ivAcousticGuitar.setImageResource(resID);

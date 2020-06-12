@@ -17,7 +17,7 @@ public abstract class Instrument implements Serializable {
     private int[] images;
 
     public Instrument(String title, int price, String brand, String colour, String condition,
-                      String location, String description, String seller, int id, int[] images) {
+                      String location, String description, String seller, int id, int view, int[] images) {
 
         this.title = title;
         this.price = price;
@@ -77,9 +77,9 @@ public abstract class Instrument implements Serializable {
 // com.example.instrument_app.Guitar Class
 abstract class Guitar extends Instrument {
     public Guitar (String title, int price, String brand, String colour, String condition,
-                   String location, String description, String seller, int id, int[] images)
+                   String location, String description, String seller, int view, int id, int[] images)
     {
-        super(title,  price,  brand, colour, condition, location, description, seller,
+        super(title,  price,  brand, colour, condition, location, description, seller, view,
                 id, images) ;
     }
 
@@ -88,44 +88,44 @@ abstract class Guitar extends Instrument {
 // Acoustic com.example.instrument_app.Guitar Class
 class AcousticGuitar extends Guitar {
     public AcousticGuitar (String title, int price, String brand, String colour, String condition,
-                           String location, String description, String seller, int id, int[] images)
+                           String location, String description, String seller, int view, int id, int[] images)
     {
-        super(title,  price,  brand, colour, condition, location, description, seller, id, images) ;
+        super(title,  price,  brand, colour, condition, location, description, seller, view, id, images) ;
     }
 }
 
 // Electric com.example.instrument_app.Guitar Class
 class ElectricGuitar extends Guitar {
     public ElectricGuitar (String title, int price, String brand, String colour, String condition,
-                           String location, String description, String seller, int id, int[] images)
+                           String location, String description, String seller, int view, int id, int[] images)
     {
-        super(title,  price,  brand, colour, condition, location, description, seller, id, images) ;
+        super(title,  price,  brand, colour, condition, location, description, seller, view, id, images) ;
     }
 }
 
 // com.example.instrument_app.Piano Class
 class Piano extends Instrument {
     public Piano (String title, int price, String brand, String colour, String condition,
-                  String location, String description, String seller, int id, int[] images)
+                  String location, String description, String seller, int view, int id, int[] images)
     {
-        super(title,  price,  brand, colour, condition, location, description, seller, id, images) ;
+        super(title,  price,  brand, colour, condition, location, description, seller, view, id, images) ;
     }
 }
 
 // com.example.instrument_app.Ukulele Class
 class Ukulele extends Instrument {
     public Ukulele (String title, int price, String brand, String colour,
-                  String condition, String location, String description, String seller, int id, int[] images)
+                  String condition, String location, String description, String seller, int view, int id, int[] images)
     {
-        super(title,  price,  brand, colour, condition, location, description, seller, id, images) ;
+        super(title,  price,  brand, colour, condition, location, description, seller, view, id, images) ;
     }
 }
 
 // com.example.instrument_app.Drum Class
 class Drum extends Instrument {
     public Drum (String title, int price, String brand, String colour,
-                  String condition, String location, String description, String seller, int id, int[] images)
+                  String condition, String location, String description, String seller, int view, int id, int[] images)
     {
-        super(title,  price,  brand, colour, condition, location, description, seller, id, images) ;
+        super(title,  price,  brand, colour, condition, location, description, seller, view, id, images) ;
     }
 }

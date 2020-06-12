@@ -15,11 +15,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ListActivity">
-        </activity>
+
+        <activity android:name=".ListActivity"/>
+
         <activity
             android:name=".InstrumentDetailActivity"
-            android:label="InstrumentDetailActivity"></activity>
+            android:label="InstrumentDetailActivity" />
     </application>
 
 </manifest>
