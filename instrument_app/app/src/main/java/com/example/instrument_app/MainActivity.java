@@ -77,9 +77,24 @@ public class MainActivity extends AppCompatActivity {
                 searchView.setQuery("", false);
                 searchView.setIconified(true);
                 searchItem.collapseActionView();
-
+                acousticGuitars = InstrumentProvider.generateAcousticGuitars();
                 //complete SearchActivity by yourself
-
+                ArrayList<AcousticGuitar> SearchArray = new ArrayList<>();
+                for (int i = 0; i < 10; i++) {
+                    //AcousticGuitar temp = acousticGuitars.get(i);
+                    //String brand = temp.getBrand();
+                    //String brand = "fender";//acousticGuitars.get(i).getBrand();
+                    String brand = acousticGuitars.get(i).getBrand();
+                    if (brand.equalsIgnoreCase(query)){
+                        SearchArray.add(acousticGuitars.get(i));
+                    }
+                }
+                setContentView(R.layout.activity_main);
+                lvAcousticGuitar = (ListView) findViewById(R.id.lvAcousticGuitars);
+                acousticGuitarsAdapter = new AcousticGuitarsAdapter(MainActivity.this, SearchArray);
+                lvAcousticGuitar.setAdapter(acousticGuitarsAdapter);
+                LinearLayoutManager lm = new LinearLayoutManager(MainActivity.this);
+                setupAcousticGuitarSelectedListener();
 
                 // Set activity title to search query
                 MainActivity.this.setTitle(query);
