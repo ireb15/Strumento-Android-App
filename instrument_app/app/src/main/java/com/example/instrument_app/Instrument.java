@@ -11,12 +11,13 @@ public abstract class Instrument implements Serializable {
     private String condition;
     private String location;
     private String description;
+    private String seller;
     private int id;
     private int views;
     private int[] images;
 
     public Instrument(String title, int price, String brand, String colour, String condition,
-                      String location, String description, int id, int[] images) {
+                      String location, String description, String seller, int id, int[] images) {
 
         this.title = title;
         this.price = price;
@@ -25,6 +26,7 @@ public abstract class Instrument implements Serializable {
         this.condition = condition;
         this.location = location;
         this.description = description;
+        this.seller = seller;
         this.id = id;
         this.images = images;
     }
@@ -61,6 +63,8 @@ public abstract class Instrument implements Serializable {
         return views;
     }
 
+    public String getSeller(){ return seller; }
+
     public int getId() {
         return id;
     }
@@ -72,56 +76,56 @@ public abstract class Instrument implements Serializable {
 
 // com.example.instrument_app.Guitar Class
 abstract class Guitar extends Instrument {
-    public Guitar (String title, int price, String brand, String colour,
-                   String condition, String location, String description, int id, int[] images)
+    public Guitar (String title, int price, String brand, String colour, String condition,
+                   String location, String description, String seller, int id, int[] images)
     {
-        super(title,  price,  brand, colour, condition, location, description, id, images) ;
+        super(title,  price,  brand, colour, condition, location, description, seller,
+                id, images) ;
     }
 
 }
 
 // Acoustic com.example.instrument_app.Guitar Class
 class AcousticGuitar extends Guitar {
-    public AcousticGuitar (String title, int price, String brand, String colour,
-                    String condition, String location, String description, int id, int[] images)
+    public AcousticGuitar (String title, int price, String brand, String colour, String condition,
+                           String location, String description, String seller, int id, int[] images)
     {
-        super(title,  price,  brand, colour, condition, location, description, id, images) ;
+        super(title,  price,  brand, colour, condition, location, description, seller, id, images) ;
     }
 }
 
 // Electric com.example.instrument_app.Guitar Class
 class ElectricGuitar extends Guitar {
-    public ElectricGuitar (String title, int price, String brand, String colour,
-                           String condition, String location, String description, int id,
-                           int[] images)
+    public ElectricGuitar (String title, int price, String brand, String colour, String condition,
+                           String location, String description, String seller, int id, int[] images)
     {
-        super(title,  price,  brand, colour, condition, location, description, id, images) ;
+        super(title,  price,  brand, colour, condition, location, description, seller, id, images) ;
     }
 }
 
 // com.example.instrument_app.Piano Class
 class Piano extends Instrument {
-    public Piano (String title, int price, String brand, String colour,
-                   String condition, String location, String description, int id, int[] images)
+    public Piano (String title, int price, String brand, String colour, String condition,
+                  String location, String description, String seller, int id, int[] images)
     {
-        super(title,  price,  brand, colour, condition, location, description, id, images) ;
+        super(title,  price,  brand, colour, condition, location, description, seller, id, images) ;
     }
 }
 
 // com.example.instrument_app.Ukulele Class
 class Ukulele extends Instrument {
     public Ukulele (String title, int price, String brand, String colour,
-                  String condition, String location, String description, int id, int[] images)
+                  String condition, String location, String description, String seller, int id, int[] images)
     {
-        super(title,  price,  brand, colour, condition, location, description, id, images) ;
+        super(title,  price,  brand, colour, condition, location, description, seller, id, images) ;
     }
 }
 
 // com.example.instrument_app.Drum Class
 class Drum extends Instrument {
     public Drum (String title, int price, String brand, String colour,
-                  String condition, String location, String description, int id, int[] images)
+                  String condition, String location, String description, String seller, int id, int[] images)
     {
-        super(title,  price,  brand, colour, condition, location, description, id, images) ;
+        super(title,  price,  brand, colour, condition, location, description, seller, id, images) ;
     }
 }

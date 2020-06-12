@@ -261,6 +261,7 @@ public class InstrumentProvider {
             int[] images3 = new int[3];
             int id = i + 1;
             String title = titles[i];
+            String seller = sellers[i];
             int price = prices[i];
             String brand = brands[i];
             String colour = colours[i];
@@ -272,7 +273,7 @@ public class InstrumentProvider {
                 incrImages++;
             }
             AcousticGuitar acousticGuitar = new AcousticGuitar(title, price, brand, colour,
-                    condition, location, description, id, images3);
+                    condition, location, description, seller, id, images3);
             acousticGuitars.add(acousticGuitar);
         }
         return acousticGuitars;
@@ -284,6 +285,7 @@ public class InstrumentProvider {
         for (int i = 10; i < 20; i++) {
             int[] images3 = new int[3];
             int id = i + 1;
+            String seller = sellers[i];
             String title = titles[i];
             int price = prices[i];
             String brand = brands[i];
@@ -296,7 +298,7 @@ public class InstrumentProvider {
                 incrImages++;
             }
             ElectricGuitar electricGuitar = new ElectricGuitar(title, price, brand, colour,
-                    condition, location, description, id, images3);
+                    condition, location, description, seller, id, images3);
             electricGuitars.add(electricGuitar);
         }
         return electricGuitars;
@@ -309,6 +311,7 @@ public class InstrumentProvider {
             int[] images3 = new int[3];
             int id = i + 1;
             String title = titles[i];
+            String seller = sellers[i];
             int price = prices[i];
             String brand = brands[i];
             String colour = colours[i];
@@ -320,7 +323,7 @@ public class InstrumentProvider {
                 incrImages++;
             }
             Ukulele ukulele = new Ukulele(title, price, brand, colour,
-                    condition, location, description, id, images3);
+                    condition, location, description, seller, id, images3);
             ukuleles.add(ukulele);
         }
         return ukuleles;
@@ -333,6 +336,7 @@ public class InstrumentProvider {
             int[] images3 = new int[3];
             int id = i + 1;
             String title = titles[i];
+            String seller = sellers[i];
             int price = prices[i];
             String brand = brands[i];
             String colour = colours[i];
@@ -344,7 +348,7 @@ public class InstrumentProvider {
                 incrImages++;
             }
             Piano piano = new Piano(title, price, brand, colour,
-                    condition, location, description, id, images3);
+                    condition, location, description, seller, id, images3);
             pianos.add(piano);
         }
         return pianos;
@@ -357,6 +361,7 @@ public class InstrumentProvider {
             int[] images3 = new int[3];
             int id = i + 1;
             String title = titles[i];
+            String seller = sellers[i];
             int price = prices[i];
             String brand = brands[i];
             String colour = colours[i];
@@ -368,7 +373,7 @@ public class InstrumentProvider {
                 incrImages++;
             }
             Drum drum = new Drum(title, price, brand, colour,
-                    condition, location, description, id, images3);
+                    condition, location, description, seller, id, images3);
             drums.add(drum);
         }
         return drums;

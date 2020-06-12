@@ -15,6 +15,7 @@ public class AcousticGuitarsAdapter extends ArrayAdapter<AcousticGuitar> {
            public ImageView ivAcousticGuitar;
            public TextView  tvTitle;
            public TextView tvDescription;
+           public TextView tvPrice;
      }
 
     public AcousticGuitarsAdapter(Context context, ArrayList<AcousticGuitar> acousticGuitars){
@@ -38,6 +39,7 @@ public class AcousticGuitarsAdapter extends ArrayAdapter<AcousticGuitar> {
             convertView = inflater.inflate(R.layout.instrument_list_view_item, parent, false);
             viewHolder.ivAcousticGuitar = (ImageView) convertView.findViewById(R.id.ivAcousticGuitarCover);
             viewHolder.tvTitle = (TextView) convertView.findViewById(R.id.tvTitle);
+            viewHolder.tvPrice = (TextView) convertView.findViewById(R.id.tvPrice);
             viewHolder.tvDescription = (TextView) convertView.findViewById(R.id.tvDescription);
             convertView.setTag(viewHolder);
         } else {
@@ -46,6 +48,7 @@ public class AcousticGuitarsAdapter extends ArrayAdapter<AcousticGuitar> {
         //Populate the data into the template view using the data object
         viewHolder.tvTitle.setText(acousticGuitar.getTitle());
         viewHolder.tvDescription.setText(acousticGuitar.getDescription());
+        viewHolder.tvPrice.setText(acousticGuitar.getPrice());
         int[] images = acousticGuitar.getImages();
         int resID = images[0];
         viewHolder.ivAcousticGuitar.setImageResource(resID);
