@@ -19,39 +19,53 @@
 
             <HorizontalScrollView
                 android:layout_height="match_parent"
-                android:layout_width="match_parent">
+                android:layout_width="410dp">
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="horizontal">
+                <RelativeLayout
+                    android:layout_width="410dp"
+                    android:layout_height="280dp">
 
-                    <ImageView
-                        android:id="@+id/ivInstrumentCover1"
-                        android:layout_width="match_parent"
-                        android:layout_height="280dp"
-                        android:paddingLeft= "50dp"
-                        android:paddingRight= "20dp"
-                        />
+                    <LinearLayout
+                        android:id="@+id/llImage1"
+                        android:layout_width="410dp"
+                        android:layout_height="match_parent">
 
-                    <ImageView
-                        android:id="@+id/ivInstrumentCover2"
-                        android:layout_width="match_parent"
-                        android:layout_height="280dp"
-                        android:layout_gravity="center_horizontal"
-                        android:paddingLeft= "20dp"
-                        android:paddingRight= "20dp"
-                        />
+                        <ImageView
+                            android:id="@+id/ivInstrumentCover1"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center" />
 
-                    <ImageView
-                        android:id="@+id/ivInstrumentCover3"
-                        android:layout_width="match_parent"
-                        android:layout_height="280dp"
-                        android:layout_gravity="center_horizontal"
-                        android:paddingLeft= "40dp"
-                        android:paddingRight= "40dp"
-                        />
-                </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/llImage2"
+                        android:layout_width="410dp"
+                        android:layout_height="match_parent"
+                        android:layout_toRightOf="@+id/llImage1">
+
+                        <ImageView
+                            android:id="@+id/ivInstrumentCover2"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/llImage3"
+                        android:layout_width="410dp"
+                        android:layout_height="match_parent"
+                        android:layout_toRightOf="@+id/llImage2">
+
+                        <ImageView
+                            android:id="@+id/ivInstrumentCover3"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center" />
+
+                    </LinearLayout>
+                </RelativeLayout>
             </HorizontalScrollView>
 
             <View

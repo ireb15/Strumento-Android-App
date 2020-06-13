@@ -39,12 +39,11 @@
                     android:layout_height="0dp"
                     android:layout_weight="5">
 
-                    <androidx.cardview.widget.CardView
-                        android:id="@+id/AcousticGuitarTopPick"
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rvTopPicks"
+                        android:scrollbars="horizontal"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:elevation="4dp" >
-                    </androidx.cardview.widget.CardView>
+                        android:layout_height="match_parent"/>
 
                 </HorizontalScrollView>
             </LinearLayout>

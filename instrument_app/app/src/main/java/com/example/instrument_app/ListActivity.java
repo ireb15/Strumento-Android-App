@@ -75,52 +75,52 @@ public class ListActivity extends AppCompatActivity {
     }
 
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-       // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_instrument_list, menu);
-        final MenuItem searchItem = menu.findItem(R.id.action_search);
-        final SearchView searchView = (SearchView) searchItem.getActionView();
-        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
-            @Override
-            public boolean onQueryTextSubmit(String query) {
-
-                // Reset SearchView
-                searchView.clearFocus();
-                searchView.setQuery("", false);
-                searchView.setIconified(true);
-                searchItem.collapseActionView();
-
-                ArrayList<AcousticGuitar> SearchArray = new ArrayList<>();
-                for (int i = 0; i < 10; i++) {
-                    //AcousticGuitar temp = acousticGuitars.get(i);
-                    //String brand = temp.getBrand();
-                    //String brand = "fender";//acousticGuitars.get(i).getBrand();
-                    String brand = acousticGuitars.get(i).getBrand();
-                    if (brand.equalsIgnoreCase(query)){
-                        SearchArray.add(acousticGuitars.get(i));
-                    }
-                }
-                setContentView(R.layout.activity_main);
-                listView = (ListView) findViewById(R.id.listView);
-                acousticGuitarsAdapter = new AcousticGuitarsAdapter(ListActivity.this,
-                        SearchArray);
-                listView.setAdapter(acousticGuitarsAdapter);
-                LinearLayoutManager lm = new LinearLayoutManager(ListActivity.this);
-                setupSelectedInstrumentListener();
-
-                // Set activity title to search query
-                ListActivity.this.setTitle(query);
-                return true;
-            }
-
-            @Override
-            public boolean onQueryTextChange(String s) {
-                return false;
-            }
-        });
-        return true;
-    }
+//    @Override
+//    public boolean onCreateOptionsMenu(Menu menu) {
+//       // Inflate the menu; this adds items to the action bar if it is present.
+//        getMenuInflater().inflate(R.menu.menu_instrument_list, menu);
+//        final MenuItem searchItem = menu.findItem(R.id.action_search);
+//        final SearchView searchView = (SearchView) searchItem.getActionView();
+//        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+//            @Override
+//            public boolean onQueryTextSubmit(String query) {
+//
+//                // Reset SearchView
+//                searchView.clearFocus();
+//                searchView.setQuery("", false);
+//                searchView.setIconified(true);
+//                searchItem.collapseActionView();
+//
+//                ArrayList<AcousticGuitar> SearchArray = new ArrayList<>();
+//                for (int i = 0; i < 10; i++) {
+//                    //AcousticGuitar temp = acousticGuitars.get(i);
+//                    //String brand = temp.getBrand();
+//                    //String brand = "fender";//acousticGuitars.get(i).getBrand();
+//                    String brand = acousticGuitars.get(i).getBrand();
+//                    if (brand.equalsIgnoreCase(query)){
+//                        SearchArray.add(acousticGuitars.get(i));
+//                    }
+//                }
+//                setContentView(R.layout.activity_main);
+//                listView = (ListView) findViewById(R.id.listView);
+//                acousticGuitarsAdapter = new AcousticGuitarsAdapter(ListActivity.this,
+//                        SearchArray);
+//                listView.setAdapter(acousticGuitarsAdapter);
+//                LinearLayoutManager lm = new LinearLayoutManager(ListActivity.this);
+//                setupSelectedInstrumentListener();
+//
+//                // Set activity title to search query
+//                ListActivity.this.setTitle(query);
+//                return true;
+//            }
+//
+//            @Override
+//            public boolean onQueryTextChange(String s) {
+//                return false;
+//            }
+//        });
+//        return true;
+//    }
 
 
     @Override
