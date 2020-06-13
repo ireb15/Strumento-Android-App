@@ -280,7 +280,7 @@ public class InstrumentProvider {
     // Generate data for Electric Guitars
     public static ArrayList<Instrument> generateElectricGuitars() {
         ArrayList<ElectricGuitar> electricGuitars = new ArrayList<ElectricGuitar>();
-        int incrImages = 10;
+        int incrImages = 30;
         for (int i = 10; i < 20; i++) {
             int[] images3 = new int[3];
             int id = i + 1;
@@ -307,8 +307,8 @@ public class InstrumentProvider {
     // Generate data for Pianos
     public static ArrayList<Instrument> generatePianos() {
         ArrayList<Piano> pianos = new ArrayList<Piano>();
-        int incrImages = 30;
-        for (int i = 30; i < 40; i++) {
+        int incrImages = 60;
+        for (int i = 20; i < 30; i++) {
             int[] images3 = new int[3];
             int id = i + 1;
             int view = 0;
@@ -334,8 +334,8 @@ public class InstrumentProvider {
     // Generate data for Ukuleles
     public static ArrayList<Instrument> generateUkuleles() {
         ArrayList<Ukulele> ukuleles = new ArrayList<Ukulele>();
-        int incrImages = 20;
-        for (int i = 20; i < 30; i++) {
+        int incrImages = 90;
+        for (int i = 30; i < 40; i++) {
             int[] images3 = new int[3];
             int id = i + 1;
             int view = 0;
@@ -361,7 +361,7 @@ public class InstrumentProvider {
     // Generate data for Drums
     public static ArrayList<Instrument> generateDrums() {
         ArrayList<Drum> drums = new ArrayList<Drum>();
-        int incrImages = 40;
+        int incrImages = 120;
         for (int i = 40; i < 50; i++) {
             int[] images3 = new int[3];
             int id = i + 1;
