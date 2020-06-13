@@ -251,9 +251,8 @@ public class InstrumentProvider {
             R.drawable.british_drum_company_drums_2, R.drawable.british_drum_company_drums_3};
 
     // Generate data for Acoustic Guitars
-    public static ArrayList<AcousticGuitar> generateAcousticGuitars() {
+    public static ArrayList<Instrument> generateAcousticGuitars() {
         ArrayList<AcousticGuitar> acousticGuitars = new ArrayList<AcousticGuitar>();
-
         int incrImages = 0;
         for (int i = 0; i < 10; i++) {
             int[] images3 = new int[3];
@@ -275,11 +274,11 @@ public class InstrumentProvider {
                     condition, location, description, seller, view, id, images3);
             acousticGuitars.add(acousticGuitar);
         }
-        return acousticGuitars;
+        return Instrument.getAcousticGuitarList();
     }
 
     // Generate data for Electric Guitars
-    public static ArrayList<ElectricGuitar> generateElectricGuitars() {
+    public static ArrayList<Instrument> generateElectricGuitars() {
         ArrayList<ElectricGuitar> electricGuitars = new ArrayList<ElectricGuitar>();
         int incrImages = 10;
         for (int i = 10; i < 20; i++) {
@@ -302,38 +301,11 @@ public class InstrumentProvider {
                     condition, location, description, seller,view, id, images3);
             electricGuitars.add(electricGuitar);
         }
-        return electricGuitars;
-    }
-
-    // Generate data for Ukuleles
-    public static ArrayList<Ukulele> generateUkuleles() {
-        ArrayList<Ukulele> ukuleles = new ArrayList<Ukulele>();
-        int incrImages = 20;
-        for (int i = 20; i < 30; i++) {
-            int[] images3 = new int[3];
-            int id = i + 1;
-            int view = 0;
-            String title = titles[i];
-            String seller = sellers[i];
-            int price = prices[i];
-            String brand = brands[i];
-            String colour = colours[i];
-            String condition = conditions[i];
-            String location = locations[i];
-            String description = descriptions[i];
-            for (int j = 0; j < 3; j++) {
-                images3[j] = images[incrImages];
-                incrImages++;
-            }
-            Ukulele ukulele = new Ukulele(title, price, brand, colour,
-                    condition, location, description, seller,view, id, images3);
-            ukuleles.add(ukulele);
-        }
-        return ukuleles;
+        return Instrument.getElectricGuitarList();
     }
 
     // Generate data for Pianos
-    public static ArrayList<Piano> generatePianos() {
+    public static ArrayList<Instrument> generatePianos() {
         ArrayList<Piano> pianos = new ArrayList<Piano>();
         int incrImages = 30;
         for (int i = 30; i < 40; i++) {
@@ -356,11 +328,38 @@ public class InstrumentProvider {
                     condition, location, description, seller,view, id, images3);
             pianos.add(piano);
         }
-        return pianos;
+        return Instrument.getPianoList();
+    }
+
+    // Generate data for Ukuleles
+    public static ArrayList<Instrument> generateUkuleles() {
+        ArrayList<Ukulele> ukuleles = new ArrayList<Ukulele>();
+        int incrImages = 20;
+        for (int i = 20; i < 30; i++) {
+            int[] images3 = new int[3];
+            int id = i + 1;
+            int view = 0;
+            String title = titles[i];
+            String seller = sellers[i];
+            int price = prices[i];
+            String brand = brands[i];
+            String colour = colours[i];
+            String condition = conditions[i];
+            String location = locations[i];
+            String description = descriptions[i];
+            for (int j = 0; j < 3; j++) {
+                images3[j] = images[incrImages];
+                incrImages++;
+            }
+            Ukulele ukulele = new Ukulele(title, price, brand, colour,
+                    condition, location, description, seller,view, id, images3);
+            ukuleles.add(ukulele);
+        }
+        return Instrument.getUkuleleList();
     }
 
     // Generate data for Drums
-    public static ArrayList<Drum> generateDrums() {
+    public static ArrayList<Instrument> generateDrums() {
         ArrayList<Drum> drums = new ArrayList<Drum>();
         int incrImages = 40;
         for (int i = 40; i < 50; i++) {
@@ -383,7 +382,7 @@ public class InstrumentProvider {
                     condition, location, description, seller,view, id, images3);
             drums.add(drum);
         }
-        return drums;
+        return Instrument.getDrumsList();
     }
 
 }

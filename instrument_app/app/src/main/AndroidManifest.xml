@@ -20,8 +20,8 @@
         <activity android:name=".ListActivity"/>
 
         <activity
-            android:name=".InstrumentDetailActivity"
-            android:label="InstrumentDetailActivity" />
+            android:name=".DetailActivity"
+            android:label="DetailActivity" />
     </application>
 
 </manifest>

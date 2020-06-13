@@ -20,12 +20,13 @@ public class ListActivity extends AppCompatActivity {
     public static String INSTRUMENT_DETAIL_KEY = "acoustic guitar";
 
     ListView listView;
-    AcousticGuitarsAdapter acousticGuitarsAdapter;
-    ElectricGuitarsAdapter electricGuitarsAdapter;
-    PianosAdapter pianosAdapter;
-    UkulelesAdapter ukulelesAdapter;
-    DrumsAdapter drumsAdapter;
-    ArrayList<AcousticGuitar> acousticGuitars;
+//    AcousticGuitarsAdapter acousticGuitarsAdapter;
+//    ElectricGuitarsAdapter electricGuitarsAdapter;
+//    PianosAdapter pianosAdapter;
+//    UkulelesAdapter ukulelesAdapter;
+//    DrumsAdapter drumsAdapter;
+
+    InstrumentAdapter instrumentAdapter;
 
     static String category;
 
@@ -37,34 +38,32 @@ public class ListActivity extends AppCompatActivity {
         listView = (ListView) findViewById(R.id.listView);
 
         Intent intent = getIntent();
-        category=intent.getStringExtra(Intent.EXTRA_TEXT);
+        category = intent.getStringExtra(Intent.EXTRA_TEXT);
+        INSTRUMENT_DETAIL_KEY = category;
         if (category.equals("acoustic guitars")) {
-            ArrayList<AcousticGuitar> acousticGuitars = InstrumentProvider.
-                    generateAcousticGuitars();
-            acousticGuitarsAdapter = new AcousticGuitarsAdapter(this, acousticGuitars);
-            listView.setAdapter(acousticGuitarsAdapter);
+            //ArrayList<AcousticGuitar> acousticGuitars = InstrumentProvider.generateAcousticGuitars();
+            ArrayList<Instrument> acousticGuitars = InstrumentProvider.generateAcousticGuitars();
+            //acousticGuitarsAdapter = new AcousticGuitarsAdapter(this, acousticGuitars);
+            instrumentAdapter = new InstrumentAdapter(this, acousticGuitars);
+            //listView.setAdapter(acousticGuitarsAdapter);
+            listView.setAdapter(instrumentAdapter);
         } else if (category.equals("electric guitars")) {
-            ArrayList<ElectricGuitar> electricGuitars = InstrumentProvider.
-                    generateElectricGuitars();
-            electricGuitarsAdapter = new ElectricGuitarsAdapter(this, electricGuitars);
-            listView.setAdapter(electricGuitarsAdapter);
+            ArrayList<Instrument> electricGuitars = InstrumentProvider.generateElectricGuitars();
+            instrumentAdapter = new InstrumentAdapter(this, electricGuitars);
+            listView.setAdapter(instrumentAdapter);
         } else if (category.equals("pianos")) {
-            ArrayList<Piano> pianos = InstrumentProvider.
-                    generatePianos();
-            pianosAdapter = new PianosAdapter(this, pianos);
-            listView.setAdapter(pianosAdapter);
+            ArrayList<Instrument> pianos = InstrumentProvider.generatePianos();
+            instrumentAdapter = new InstrumentAdapter(this, pianos);
+            listView.setAdapter(instrumentAdapter);
         } else if (category.equals("ukuleles")) {
-            ArrayList<Ukulele> ukuleles = InstrumentProvider.
-                    generateUkuleles();
-            ukulelesAdapter = new UkulelesAdapter(this, ukuleles);
-            listView.setAdapter(ukulelesAdapter);
-        } else if (category.equals("drums")){
-            ArrayList<Drum> drums = InstrumentProvider.
-                    generateDrums();
-            drumsAdapter = new DrumsAdapter(this, drums);
-            listView.setAdapter(drumsAdapter);
+            ArrayList<Instrument> ukuleles = InstrumentProvider.generateUkuleles();
+            instrumentAdapter = new InstrumentAdapter(this, ukuleles);
+            listView.setAdapter(instrumentAdapter);
+        } else {
+            ArrayList<Instrument> drums = InstrumentProvider.generateDrums();
+            instrumentAdapter = new InstrumentAdapter(this, drums);
+            listView.setAdapter(instrumentAdapter);
         }
-
 
         LinearLayoutManager lm = new LinearLayoutManager(this);
 
@@ -78,72 +77,61 @@ public class ListActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 // Launch the detail view passing book as an extra
-                Intent intent = new Intent(ListActivity.this, InstrumentDetailActivity.class);
-                INSTRUMENT_DETAIL_KEY = category;
-                if (category.equals("acoustic guitar")) {
-                    intent.putExtra(INSTRUMENT_DETAIL_KEY, acousticGuitarsAdapter.getItem(position));
-                } else if (category.equals("electric guitar")) {
-                    intent.putExtra(INSTRUMENT_DETAIL_KEY, electricGuitarsAdapter.getItem(position));
-                } else if (category.equals("pianos")) {
-                    intent.putExtra(INSTRUMENT_DETAIL_KEY, pianosAdapter.getItem(position));
-                } else if (category.equals("ukuleles")) {
-                    intent.putExtra(INSTRUMENT_DETAIL_KEY, ukulelesAdapter.getItem(position));
-                } else if (category.equals("drums")){
-                    intent.putExtra(INSTRUMENT_DETAIL_KEY, drumsAdapter.getItem(position));
-                }
+                Intent intent = new Intent(ListActivity.this, DetailActivity.class);
+                intent.putExtra(INSTRUMENT_DETAIL_KEY, instrumentAdapter.getItem(position));
                 startActivity(intent);
             }
         });
     }
 
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_instrument_list, menu);
-        final MenuItem searchItem = menu.findItem(R.id.action_search);
-        final SearchView searchView = (SearchView) searchItem.getActionView();
-        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
-            @Override
-            public boolean onQueryTextSubmit(String query) {
-
-                // Reset SearchView
-                searchView.clearFocus();
-                searchView.setQuery("", false);
-                searchView.setIconified(true);
-                searchItem.collapseActionView();
-                acousticGuitars = InstrumentProvider.generateAcousticGuitars();
-                //complete SearchActivity by yourself
-                ArrayList<AcousticGuitar> SearchArray = new ArrayList<>();
-                for (int i = 0; i < 10; i++) {
-                    //AcousticGuitar temp = acousticGuitars.get(i);
-                    //String brand = temp.getBrand();
-                    //String brand = "fender";//acousticGuitars.get(i).getBrand();
-                    String brand = acousticGuitars.get(i).getBrand();
-                    if (brand.equalsIgnoreCase(query)){
-                        SearchArray.add(acousticGuitars.get(i));
-                    }
-                }
-                setContentView(R.layout.activity_main);
-                listView = (ListView) findViewById(R.id.listView);
-                acousticGuitarsAdapter = new AcousticGuitarsAdapter(ListActivity.this,
-                        SearchArray);
-                listView.setAdapter(acousticGuitarsAdapter);
-                LinearLayoutManager lm = new LinearLayoutManager(ListActivity.this);
-                setupSelectedInstrumentListener();
-
-                // Set activity title to search query
-                ListActivity.this.setTitle(query);
-                return true;
-            }
-
-            @Override
-            public boolean onQueryTextChange(String s) {
-                return false;
-            }
-        });
-        return true;
-    }
+//    @Override
+//    public boolean onCreateOptionsMenu(Menu menu) {
+//        // Inflate the menu; this adds items to the action bar if it is present.
+//        getMenuInflater().inflate(R.menu.menu_instrument_list, menu);
+//        final MenuItem searchItem = menu.findItem(R.id.action_search);
+//        final SearchView searchView = (SearchView) searchItem.getActionView();
+//        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+//            @Override
+//            public boolean onQueryTextSubmit(String query) {
+//
+//                // Reset SearchView
+//                searchView.clearFocus();
+//                searchView.setQuery("", false);
+//                searchView.setIconified(true);
+//                searchItem.collapseActionView();
+//                acousticGuitars = InstrumentProvider.generateAcousticGuitars();
+//                //complete SearchActivity by yourself
+//                ArrayList<AcousticGuitar> SearchArray = new ArrayList<>();
+//                for (int i = 0; i < 10; i++) {
+//                    //AcousticGuitar temp = acousticGuitars.get(i);
+//                    //String brand = temp.getBrand();
+//                    //String brand = "fender";//acousticGuitars.get(i).getBrand();
+//                    String brand = acousticGuitars.get(i).getBrand();
+//                    if (brand.equalsIgnoreCase(query)){
+//                        SearchArray.add(acousticGuitars.get(i));
+//                    }
+//                }
+//                setContentView(R.layout.activity_main);
+//                listView = (ListView) findViewById(R.id.listView);
+//                acousticGuitarsAdapter = new AcousticGuitarsAdapter(ListActivity.this,
+//                        SearchArray);
+//                listView.setAdapter(acousticGuitarsAdapter);
+//                LinearLayoutManager lm = new LinearLayoutManager(ListActivity.this);
+//                setupSelectedInstrumentListener();
+//
+//                // Set activity title to search query
+//                ListActivity.this.setTitle(query);
+//                return true;
+//            }
+//
+//            @Override
+//            public boolean onQueryTextChange(String s) {
+//                return false;
+//            }
+//        });
+//        return true;
+//    }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
