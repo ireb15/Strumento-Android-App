@@ -2,7 +2,6 @@ package com.example.instrument_app;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
-import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
 import android.content.Intent;
@@ -82,16 +81,17 @@ public class MainActivity extends AppCompatActivity {
                 return true;
             }
 
-//            public void onBackPressed(){
-//                setContentView(R.layout.activity_main);
-//            }
-
             @Override
             public boolean onQueryTextChange(String s) {
                 return false;
             }
         });
         return true;
+    }
+
+    @Override
+    public void onBackPressed() {
+        setContentView(R.layout.activity_main);
     }
 
     @Override
@@ -103,7 +103,6 @@ public class MainActivity extends AppCompatActivity {
         if (id == R.id.action_search) {
             return true;
         }
-
         return super.onOptionsItemSelected(item);
     }
 
