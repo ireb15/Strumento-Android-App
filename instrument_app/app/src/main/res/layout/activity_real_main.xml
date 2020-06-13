@@ -9,19 +9,21 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        >
+
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:padding="16dp">
+            android:padding="16dp"
+            >
 
             <LinearLayout
                 android:id="@+id/llSearchBox"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
-                android:orientation="horizontal"
-                android:background="#EEEEEE">
+                android:orientation="horizontal">
 
                 <ImageView
                     android:layout_width="0dp"

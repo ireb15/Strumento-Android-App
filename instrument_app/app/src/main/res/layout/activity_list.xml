@@ -11,6 +11,7 @@
         android:id="@+id/lvAcousticGuitars"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="#FFF8E1"
         android:dividerHeight="10sp"
         android:padding="16dp"
         android:divider="@android:color/transparent" />
