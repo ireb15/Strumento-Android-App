@@ -9,7 +9,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class InstrumentDetailActivity extends AppCompatActivity {
 
-    private ImageView ivAcousticGuitarCover;
+    private ImageView ivAcousticGuitarCover1;
+    private ImageView ivAcousticGuitarCover2;
+    private ImageView ivAcousticGuitarCover3;
     private TextView tvTitle;
     private TextView tvPrice;
     private TextView tvSeller;
@@ -20,7 +22,9 @@ public class InstrumentDetailActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_instrument_detail);
-        ivAcousticGuitarCover = (ImageView) findViewById(R.id.ivAcousticGuitarCover);
+        ivAcousticGuitarCover1 = (ImageView) findViewById(R.id.ivAcousticGuitarCover1);
+        ivAcousticGuitarCover2 = (ImageView) findViewById(R.id.ivAcousticGuitarCover2);
+        ivAcousticGuitarCover3 = (ImageView) findViewById(R.id.ivAcousticGuitarCover3);
         tvTitle = (TextView) findViewById(R.id.tvTitle);
         tvPrice = (TextView) findViewById(R.id.tvPrice);
         tvDescription = (TextView) findViewById(R.id.tvDescription);
@@ -45,7 +49,11 @@ public class InstrumentDetailActivity extends AppCompatActivity {
         //String mDrawableName = book.getCover();
         //int resID = getResources().getIdentifier(mDrawableName , "drawable", getPackageName());
         int[] images = acousticGuitar.getImages();
-        int resID = images[0];
-        ivAcousticGuitarCover.setImageResource(resID); }
+        int resID1 = images[0];
+        ivAcousticGuitarCover1.setImageResource(resID1);
+        int resID2 = images[1];
+        ivAcousticGuitarCover2.setImageResource(resID2);
+        int resID3 = images[2];
+        ivAcousticGuitarCover3.setImageResource(resID3);}
 
 }
