@@ -385,4 +385,11 @@ public class InstrumentProvider {
         return Instrument.getDrumsList();
     }
 
+    public static void generateAllInstruments() {
+        generateAcousticGuitars();
+        generateElectricGuitars();
+        generatePianos();
+        generateUkuleles();
+        generateDrums();
+    }
 }
