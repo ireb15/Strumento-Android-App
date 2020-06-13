@@ -72,7 +72,13 @@ public class MainActivity extends AppCompatActivity {
                         SearchArray.add(getInstrumentsList().get(i));
                     }
                 }
+
+
+
+
                 setContentView(R.layout.activity_list);
+                tvSearchResults = findViewById(R.id.tvSearchResults);
+
                 listView = (ListView) findViewById(R.id.listView);
                 instrumentAdapter = new InstrumentAdapter(MainActivity.this,
                         SearchArray);
@@ -82,16 +88,14 @@ public class MainActivity extends AppCompatActivity {
 
                 // Set activity title to search query
                 MainActivity.this.setTitle(query);
-
                 if (SearchArray.size()==0) {
-                    setContentView(R.layout.activity_list);
-                    tvSearchResults = (TextView) findViewById(R.id.tvSearchResults);
-                    tvSearchResults.setText("Sorry, we found no results for:"+ "'"+query +"'");
+                    tvSearchResults.setText("Sorry, we found no results for: "+ "\""+query+"\"");
+                }else{
+                    tvSearchResults.setText(" ");
                 }
+
                 return true;
             }
-
-
 
             @Override
             public boolean onQueryTextChange(String s) {
