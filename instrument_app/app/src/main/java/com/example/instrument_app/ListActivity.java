@@ -11,10 +11,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
-
-
 import java.util.ArrayList;
-import static com.example.instrument_app.Instrument.getInstrumentsList;
 
 //Displays list view of the selected category of instruments and results from search
 public class ListActivity extends AppCompatActivity {
@@ -73,51 +70,6 @@ public class ListActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-    }
-
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-       // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_instrument_list, menu);
-        final MenuItem searchItem = menu.findItem(R.id.action_search);
-        final SearchView searchView = (SearchView) searchItem.getActionView();
-        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
-            @Override
-            public boolean onQueryTextSubmit(String query) {
-
-                // Reset SearchView
-                searchView.clearFocus();
-                searchView.setQuery("", false);
-                searchView.setIconified(true);
-                searchItem.collapseActionView();
-
-                ArrayList<Instrument> SearchArray = new ArrayList<>();
-                for (int i = 0; i < 50; i++) {
-                    String brand = getInstrumentsList().get(i).getBrand();
-                    if (brand.equalsIgnoreCase(query)){
-                        SearchArray.add(getInstrumentsList().get(i));
-                    }
-                }
-                setContentView(R.layout.activity_main);
-                listView = (ListView) findViewById(R.id.listView);
-                instrumentAdapter = new InstrumentAdapter(ListActivity.this,
-                        SearchArray);
-                listView.setAdapter(instrumentAdapter);
-                LinearLayoutManager lm = new LinearLayoutManager(ListActivity.this);
-                setupSelectedInstrumentListener();
-
-                // Set activity title to search query
-                ListActivity.this.setTitle(query);
-                return true;
-            }
-
-            @Override
-            public boolean onQueryTextChange(String s) {
-                return false;
-            }
-        });
-        return true;
     }
 
 
