@@ -14,6 +14,7 @@ import android.widget.ListView;
 
 
 import java.util.ArrayList;
+import static com.example.instrument_app.Instrument.getInstrumentsList;
 
 //Displays list view of the selected category of instruments and results from search
 public class ListActivity extends AppCompatActivity {
@@ -91,21 +92,18 @@ public class ListActivity extends AppCompatActivity {
                 searchView.setIconified(true);
                 searchItem.collapseActionView();
 
-                ArrayList<AcousticGuitar> SearchArray = new ArrayList<>();
-                for (int i = 0; i < 10; i++) {
-                    //AcousticGuitar temp = acousticGuitars.get(i);
-                    //String brand = temp.getBrand();
-                    //String brand = "fender";//acousticGuitars.get(i).getBrand();
-                    String brand = acousticGuitars.get(i).getBrand();
+                ArrayList<Instrument> SearchArray = new ArrayList<>();
+                for (int i = 0; i < 50; i++) {
+                    String brand = getInstrumentsList().get(i).getBrand();
                     if (brand.equalsIgnoreCase(query)){
-                        SearchArray.add(acousticGuitars.get(i));
+                        SearchArray.add(getInstrumentsList().get(i));
                     }
                 }
                 setContentView(R.layout.activity_main);
                 listView = (ListView) findViewById(R.id.listView);
-                acousticGuitarsAdapter = new AcousticGuitarsAdapter(ListActivity.this,
+                instrumentAdapter = new InstrumentAdapter(ListActivity.this,
                         SearchArray);
-                listView.setAdapter(acousticGuitarsAdapter);
+                listView.setAdapter(instrumentAdapter);
                 LinearLayoutManager lm = new LinearLayoutManager(ListActivity.this);
                 setupSelectedInstrumentListener();
 
