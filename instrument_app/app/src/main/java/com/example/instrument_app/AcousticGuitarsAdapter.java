@@ -11,10 +11,10 @@ import java.util.ArrayList;
 
 public class AcousticGuitarsAdapter extends ArrayAdapter<AcousticGuitar> {
 
-    private static class ViewHolder{
+    private static class ViewHolder {
         public ImageView ivInstrumentCover;
-        public TextView  tvTitle;
-        public TextView tvDescription;
+        public TextView tvTitle;
+        public TextView tvPrice;
     }
 
     public AcousticGuitarsAdapter(Context context, ArrayList<AcousticGuitar> acousticGuitars){
@@ -38,14 +38,14 @@ public class AcousticGuitarsAdapter extends ArrayAdapter<AcousticGuitar> {
             convertView = inflater.inflate(R.layout.instrument_list_view_item, parent, false);
             viewHolder.ivInstrumentCover = (ImageView) convertView.findViewById(R.id.ivInstrumentCover);
             viewHolder.tvTitle = (TextView) convertView.findViewById(R.id.tvTitle);
-            viewHolder.tvDescription = (TextView) convertView.findViewById(R.id.tvDescription);
+            viewHolder.tvPrice = (TextView) convertView.findViewById(R.id.tvPrice);
             convertView.setTag(viewHolder);
         } else {
             viewHolder = (ViewHolder) convertView.getTag();
         }
         //Populate the data into the template view using the data object
         viewHolder.tvTitle.setText(acousticGuitar.getTitle());
-        viewHolder.tvDescription.setText(acousticGuitar.getDescription());
+        viewHolder.tvPrice.setText("$" + acousticGuitar.getPrice());
         int[] images = acousticGuitar.getImages();
         int resID = images[0];
         viewHolder.ivInstrumentCover.setImageResource(resID);

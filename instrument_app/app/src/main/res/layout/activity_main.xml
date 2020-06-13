@@ -9,12 +9,15 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        >
+
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:padding="16dp">
+            android:padding="16dp"
+            android:background="#FFF8E1">
 
             <LinearLayout
                 android:id="@+id/llTopPicks"
@@ -121,6 +124,7 @@
                 android:layout_below="@id/PianoCategory"
                 style="@style/CategoryCards"
                 android:onClick="ShowUkuleles">
+
 
                 <LinearLayout
                     style="@style/CategoryLL">

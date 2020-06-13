@@ -27,6 +27,8 @@ public class ListActivity extends AppCompatActivity {
     DrumsAdapter drumsAdapter;
     ArrayList<AcousticGuitar> acousticGuitars;
 
+    static String category;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,7 +37,7 @@ public class ListActivity extends AppCompatActivity {
         listView = (ListView) findViewById(R.id.listView);
 
         Intent intent = getIntent();
-        String category=intent.getStringExtra(Intent.EXTRA_TEXT);
+        category=intent.getStringExtra(Intent.EXTRA_TEXT);
         if (category.equals("acoustic guitars")) {
             ArrayList<AcousticGuitar> acousticGuitars = InstrumentProvider.
                     generateAcousticGuitars();
@@ -66,12 +68,12 @@ public class ListActivity extends AppCompatActivity {
 
         LinearLayoutManager lm = new LinearLayoutManager(this);
 
-        setupSelectedInstrumentListener(category);
+        setupSelectedInstrumentListener();
 
     }
 
 
-    public void setupSelectedInstrumentListener(final String category) {
+    public void setupSelectedInstrumentListener() {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -110,9 +112,25 @@ public class ListActivity extends AppCompatActivity {
                 searchView.setQuery("", false);
                 searchView.setIconified(true);
                 searchItem.collapseActionView();
-
+                acousticGuitars = InstrumentProvider.generateAcousticGuitars();
                 //complete SearchActivity by yourself
-
+                ArrayList<AcousticGuitar> SearchArray = new ArrayList<>();
+                for (int i = 0; i < 10; i++) {
+                    //AcousticGuitar temp = acousticGuitars.get(i);
+                    //String brand = temp.getBrand();
+                    //String brand = "fender";//acousticGuitars.get(i).getBrand();
+                    String brand = acousticGuitars.get(i).getBrand();
+                    if (brand.equalsIgnoreCase(query)){
+                        SearchArray.add(acousticGuitars.get(i));
+                    }
+                }
+                setContentView(R.layout.activity_main);
+                listView = (ListView) findViewById(R.id.listView);
+                acousticGuitarsAdapter = new AcousticGuitarsAdapter(ListActivity.this,
+                        SearchArray);
+                listView.setAdapter(acousticGuitarsAdapter);
+                LinearLayoutManager lm = new LinearLayoutManager(ListActivity.this);
+                setupSelectedInstrumentListener();
 
                 // Set activity title to search query
                 ListActivity.this.setTitle(query);

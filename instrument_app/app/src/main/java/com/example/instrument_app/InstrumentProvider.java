@@ -100,7 +100,7 @@ public class InstrumentProvider {
             "Got frostbite, lost a couple fingers",
             "I can just make myself a guitar",
             "Tried to make it a big, didn't work out",
-            "Who need's a guitar when Coco's here",//Electric guitar
+            "Who need's a guitar when Miguel is here",//Electric guitar
             "Elmo can sing, he doesn't need a guitar",
             "I'm a wizard, only got time for spells",
             "Made out of chocolate, promise",
@@ -111,7 +111,7 @@ public class InstrumentProvider {
             "The children just wont grow up and learn to play",
             "Doesn't play too well underwater, last guy got electrocuted",
             "I'm going on an adventure and can't bring the piano with me",//com.example.instrument_app.Piano
-            "Went through mum's closet and found this behind the coats",
+            "Went through an old closet and found this behind the coats",
             "Won this in a Butterbeer competition",
             "This piano will self destruct in 5...4...",
             "Still too sad to play",
@@ -140,6 +140,59 @@ public class InstrumentProvider {
             "Let it go, let it goooooo...yup, I'm letting it go",
             "We play harps here",
             "Who's drums are these, who knows?"
+    };
+
+    static String[] sellers = {
+            "Frodo",//Acoustic Guitar
+            "Bru... mmm.. I mean, Batman",
+            "Superman",
+            "Plankton",
+            "Engineering Student",
+            "Peter Bier's Prodigy",
+            "Velma Dinkley",
+            "Abominable Snowman",
+            "Zeus",
+            "Jessie Prescott",
+            "Coco",//Electric guitar
+            "Cookie Monster",
+            "Hermione Granger",
+            "Willy Wonka",
+            "Wicked Witch of the West",
+            "Rocket Raccoon",
+            "Professor X",
+            "Thor",
+            "Peter Pan",
+            "Aquaman",
+            "Bilbo Baggins",//Piano
+            "Lucy Pevensie",
+            "Ron Weasley",
+            "Bond, James Bond",
+            "Engineering Student",
+            "Archie Andrews",
+            "Hagrid",
+            "Lost Shepherd",
+            "The Great, Jay Gatsby",
+            "Jack and Rose",
+            "Flint Lockwood",//Ukulele
+            "Dr. Doofenshmirtz",
+            "Felicity Smoak",
+            "The Flash",
+            "Avatar",
+            "Lilliputians",
+            "Cooper ",
+            "Mr Darcy",
+            "Godric Gryffindor",
+            "Ian Malcom",
+            "Bubbles, Blossom and Buttercup",//Drums
+            "Monica Geller",
+            "Engineering Student",
+            "Alladin",
+            "The Flinstones",
+            "Silent Murderer",
+            "Woody",
+            "Elsa",
+            "THE Angels",
+            "Horton"
     };
 
     // Image path of instrument images in the drawable folder
@@ -205,7 +258,9 @@ public class InstrumentProvider {
         for (int i = 0; i < 10; i++) {
             int[] images3 = new int[3];
             int id = i + 1;
+            int view = 0;
             String title = titles[i];
+            String seller = sellers[i];
             int price = prices[i];
             String brand = brands[i];
             String colour = colours[i];
@@ -217,7 +272,7 @@ public class InstrumentProvider {
                 incrImages++;
             }
             AcousticGuitar acousticGuitar = new AcousticGuitar(title, price, brand, colour,
-                    condition, location, description, id, images3);
+                    condition, location, description, seller, view, id, images3);
             acousticGuitars.add(acousticGuitar);
         }
         return acousticGuitars;
@@ -230,6 +285,8 @@ public class InstrumentProvider {
         for (int i = 10; i < 20; i++) {
             int[] images3 = new int[3];
             int id = i + 1;
+            int view = 0;
+            String seller = sellers[i];
             String title = titles[i];
             int price = prices[i];
             String brand = brands[i];
@@ -242,7 +299,7 @@ public class InstrumentProvider {
                 incrImages++;
             }
             ElectricGuitar electricGuitar = new ElectricGuitar(title, price, brand, colour,
-                    condition, location, description, id, images3);
+                    condition, location, description, seller,view, id, images3);
             electricGuitars.add(electricGuitar);
         }
         return electricGuitars;
@@ -255,7 +312,9 @@ public class InstrumentProvider {
         for (int i = 20; i < 30; i++) {
             int[] images3 = new int[3];
             int id = i + 1;
+            int view = 0;
             String title = titles[i];
+            String seller = sellers[i];
             int price = prices[i];
             String brand = brands[i];
             String colour = colours[i];
@@ -267,7 +326,7 @@ public class InstrumentProvider {
                 incrImages++;
             }
             Ukulele ukulele = new Ukulele(title, price, brand, colour,
-                    condition, location, description, id, images3);
+                    condition, location, description, seller,view, id, images3);
             ukuleles.add(ukulele);
         }
         return ukuleles;
@@ -280,7 +339,9 @@ public class InstrumentProvider {
         for (int i = 30; i < 40; i++) {
             int[] images3 = new int[3];
             int id = i + 1;
+            int view = 0;
             String title = titles[i];
+            String seller = sellers[i];
             int price = prices[i];
             String brand = brands[i];
             String colour = colours[i];
@@ -292,7 +353,7 @@ public class InstrumentProvider {
                 incrImages++;
             }
             Piano piano = new Piano(title, price, brand, colour,
-                    condition, location, description, id, images3);
+                    condition, location, description, seller,view, id, images3);
             pianos.add(piano);
         }
         return pianos;
@@ -305,7 +366,9 @@ public class InstrumentProvider {
         for (int i = 40; i < 50; i++) {
             int[] images3 = new int[3];
             int id = i + 1;
+            int view = 0;
             String title = titles[i];
+            String seller = sellers[i];
             int price = prices[i];
             String brand = brands[i];
             String colour = colours[i];
@@ -317,7 +380,7 @@ public class InstrumentProvider {
                 incrImages++;
             }
             Drum drum = new Drum(title, price, brand, colour,
-                    condition, location, description, id, images3);
+                    condition, location, description, seller,view, id, images3);
             drums.add(drum);
         }
         return drums;
