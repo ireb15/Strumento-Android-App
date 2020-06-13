@@ -11,13 +11,15 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.TextView;
+
 import java.util.ArrayList;
 
 import static com.example.instrument_app.Instrument.getInstrumentsList;
 
 
 public class MainActivity extends AppCompatActivity {
-
+    private TextView tvSearchResults;
     static String category;
     ListView listView;
     InstrumentAdapter instrumentAdapter;
@@ -28,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         InstrumentProvider.generateAllInstruments();
+        MainActivity.this.setTitle("Instrument App");
     }
 
     //Registers when a particular instrument is selected
@@ -60,11 +63,12 @@ public class MainActivity extends AppCompatActivity {
                 searchView.setIconified(true);
                 searchItem.collapseActionView();
 
+
                 ArrayList<Instrument> SearchArray = new ArrayList<>();
                 //InstrumentProvider.generateAllInstruments();
                 for (int i = 0; i < 50; i++) {
                     String brand = getInstrumentsList().get(i).getBrand();
-                    if (brand.equalsIgnoreCase(query)){
+                    if (brand.equalsIgnoreCase(query)) {
                         SearchArray.add(getInstrumentsList().get(i));
                     }
                 }
@@ -78,8 +82,16 @@ public class MainActivity extends AppCompatActivity {
 
                 // Set activity title to search query
                 MainActivity.this.setTitle(query);
+
+                if (SearchArray.size()==0) {
+                    setContentView(R.layout.activity_list);
+                    tvSearchResults = (TextView) findViewById(R.id.tvSearchResults);
+                    tvSearchResults.setText("Sorry, we found no results for:"+ "'"+query +"'");
+                }
                 return true;
             }
+
+
 
             @Override
             public boolean onQueryTextChange(String s) {
@@ -92,6 +104,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         setContentView(R.layout.activity_main);
+        MainActivity.this.setTitle("Instrument App");
     }
 
     @Override

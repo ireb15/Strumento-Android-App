@@ -16,4 +16,14 @@
         android:padding="16dp"
         android:divider="@android:color/transparent" />
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/tvSearchResults"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text="text"
+        android:textSize="20sp"
+        />
+
 </LinearLayout>
