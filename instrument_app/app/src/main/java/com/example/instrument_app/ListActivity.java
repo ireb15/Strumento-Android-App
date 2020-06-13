@@ -36,23 +36,23 @@ public class ListActivity extends AppCompatActivity {
         category = intent.getStringExtra(Intent.EXTRA_TEXT);
         INSTRUMENT_DETAIL_KEY = category;
         if (category.equals("acoustic guitars")) {
-            ArrayList<Instrument> acousticGuitars = InstrumentProvider.generateAcousticGuitars();
+            ArrayList<Instrument> acousticGuitars = Instrument.getAcousticGuitarList();
             instrumentAdapter = new InstrumentAdapter(this, acousticGuitars);
             listView.setAdapter(instrumentAdapter);
         } else if (category.equals("electric guitars")) {
-            ArrayList<Instrument> electricGuitars = InstrumentProvider.generateElectricGuitars();
+            ArrayList<Instrument> electricGuitars = Instrument.getElectricGuitarList();
             instrumentAdapter = new InstrumentAdapter(this, electricGuitars);
             listView.setAdapter(instrumentAdapter);
         } else if (category.equals("pianos")) {
-            ArrayList<Instrument> pianos = InstrumentProvider.generatePianos();
+            ArrayList<Instrument> pianos = Instrument.getPianoList();
             instrumentAdapter = new InstrumentAdapter(this, pianos);
             listView.setAdapter(instrumentAdapter);
         } else if (category.equals("ukuleles")) {
-            ArrayList<Instrument> ukuleles = InstrumentProvider.generateUkuleles();
+            ArrayList<Instrument> ukuleles = Instrument.getUkuleleList();
             instrumentAdapter = new InstrumentAdapter(this, ukuleles);
             listView.setAdapter(instrumentAdapter);
         } else {
-            ArrayList<Instrument> drums = InstrumentProvider.generateDrums();
+            ArrayList<Instrument> drums = Instrument.getDrumsList();
             instrumentAdapter = new InstrumentAdapter(this, drums);
             listView.setAdapter(instrumentAdapter);
         }
