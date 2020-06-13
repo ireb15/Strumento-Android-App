@@ -8,4 +8,31 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="CategoryCards">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">136dp</item>
+        <item name="android:elevation">4dp</item>
+        <item name="android:layout_marginTop">16dp</item>
+    </style>
+    
+    <style name="CategoryLL">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">136dp</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:padding">16dp</item>
+        <item name="android:background">#EEEEEE</item>
+    </style>
+    
+    <style name="CategoryImage">
+        <item name="android:layout_width">112dp</item>
+        <item name="android:layout_height">104dp</item>
+    </style>
+
+    <style name="CategoryTitle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">104dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+
 </resources>

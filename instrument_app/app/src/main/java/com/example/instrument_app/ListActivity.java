@@ -17,10 +17,14 @@ import java.util.ArrayList;
 
 public class ListActivity extends AppCompatActivity {
 
-    public static final String ACOUSTIC_GUITAR_DETAIL_KEY = "acoustic guitar";
+    public static String INSTRUMENT_DETAIL_KEY = "acoustic guitar";
 
-    ListView lvAcousticGuitar;
+    ListView listView;
     AcousticGuitarsAdapter acousticGuitarsAdapter;
+    ElectricGuitarsAdapter electricGuitarsAdapter;
+    PianosAdapter pianosAdapter;
+    UkulelesAdapter ukulelesAdapter;
+    DrumsAdapter drumsAdapter;
     ArrayList<AcousticGuitar> acousticGuitars;
 
     @Override
@@ -28,30 +32,63 @@ public class ListActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list);
 
-        lvAcousticGuitar = (ListView) findViewById(R.id.lvAcousticGuitars);
-        ArrayList<AcousticGuitar> acousticGuitars = new ArrayList<AcousticGuitar>();
+        listView = (ListView) findViewById(R.id.listView);
 
+        Intent intent = getIntent();
+        String category=intent.getStringExtra(Intent.EXTRA_TEXT);
+        if (category.equals("acoustic guitars")) {
+            ArrayList<AcousticGuitar> acousticGuitars = InstrumentProvider.
+                    generateAcousticGuitars();
+            acousticGuitarsAdapter = new AcousticGuitarsAdapter(this, acousticGuitars);
+            listView.setAdapter(acousticGuitarsAdapter);
+        } else if (category.equals("electric guitars")) {
+            ArrayList<ElectricGuitar> electricGuitars = InstrumentProvider.
+                    generateElectricGuitars();
+            electricGuitarsAdapter = new ElectricGuitarsAdapter(this, electricGuitars);
+            listView.setAdapter(electricGuitarsAdapter);
+        } else if (category.equals("pianos")) {
+            ArrayList<Piano> pianos = InstrumentProvider.
+                    generatePianos();
+            pianosAdapter = new PianosAdapter(this, pianos);
+            listView.setAdapter(pianosAdapter);
+        } else if (category.equals("ukuleles")) {
+            ArrayList<Ukulele> ukuleles = InstrumentProvider.
+                    generateUkuleles();
+            ukulelesAdapter = new UkulelesAdapter(this, ukuleles);
+            listView.setAdapter(ukulelesAdapter);
+        } else if (category.equals("drums")){
+            ArrayList<Drum> drums = InstrumentProvider.
+                    generateDrums();
+            drumsAdapter = new DrumsAdapter(this, drums);
+            listView.setAdapter(drumsAdapter);
+        }
 
-        acousticGuitars = InstrumentProvider.generateAcousticGuitars();
-        acousticGuitarsAdapter = new AcousticGuitarsAdapter(this, acousticGuitars);
-
-
-        lvAcousticGuitar.setAdapter(acousticGuitarsAdapter);
 
         LinearLayoutManager lm = new LinearLayoutManager(this);
 
-        setupAcousticGuitarSelectedListener();
+        setupSelectedInstrumentListener(category);
 
     }
 
 
-    public void setupAcousticGuitarSelectedListener() {
-        lvAcousticGuitar.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+    public void setupSelectedInstrumentListener(final String category) {
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 // Launch the detail view passing book as an extra
                 Intent intent = new Intent(ListActivity.this, InstrumentDetailActivity.class);
-                intent.putExtra(ACOUSTIC_GUITAR_DETAIL_KEY, acousticGuitarsAdapter.getItem(position));
+                INSTRUMENT_DETAIL_KEY = category;
+                if (category.equals("acoustic guitar")) {
+                    intent.putExtra(INSTRUMENT_DETAIL_KEY, acousticGuitarsAdapter.getItem(position));
+                } else if (category.equals("electric guitar")) {
+                    intent.putExtra(INSTRUMENT_DETAIL_KEY, electricGuitarsAdapter.getItem(position));
+                } else if (category.equals("pianos")) {
+                    intent.putExtra(INSTRUMENT_DETAIL_KEY, pianosAdapter.getItem(position));
+                } else if (category.equals("ukuleles")) {
+                    intent.putExtra(INSTRUMENT_DETAIL_KEY, ukulelesAdapter.getItem(position));
+                } else if (category.equals("drums")){
+                    intent.putExtra(INSTRUMENT_DETAIL_KEY, drumsAdapter.getItem(position));
+                }
                 startActivity(intent);
             }
         });
@@ -103,6 +140,21 @@ public class ListActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void ShowAcousticGuitars(View view) {
+    }
+
+    public void ShowElectricGuitars(View view) {
+    }
+
+    public void ShowPianos(View view) {
+    }
+
+    public void ShowUkuleles(View view) {
+    }
+
+    public void ShowDrums(View view) {
     }
 }
 

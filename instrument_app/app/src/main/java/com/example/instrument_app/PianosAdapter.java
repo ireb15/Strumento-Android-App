@@ -9,7 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import java.util.ArrayList;
 
-public class AcousticGuitarsAdapter extends ArrayAdapter<AcousticGuitar> {
+public class PianosAdapter extends ArrayAdapter<Piano> {
 
     private static class ViewHolder{
         public ImageView ivInstrumentCover;
@@ -17,8 +17,8 @@ public class AcousticGuitarsAdapter extends ArrayAdapter<AcousticGuitar> {
         public TextView tvDescription;
     }
 
-    public AcousticGuitarsAdapter(Context context, ArrayList<AcousticGuitar> acousticGuitars){
-        super(context, 0, acousticGuitars);
+    public PianosAdapter(Context context, ArrayList<Piano> pianos){
+        super(context, 0, pianos);
     }
 
     //translates a particular 'Book' given a position
@@ -27,7 +27,7 @@ public class AcousticGuitarsAdapter extends ArrayAdapter<AcousticGuitar> {
     public View getView(int position, View convertView, ViewGroup parent) {
 
         //get the data item for this position
-        final AcousticGuitar acousticGuitar = getItem(position);
+        final Piano piano = getItem(position);
         //check if an existing view is being reused,
         // otherwise inflate the view
 
@@ -44,9 +44,9 @@ public class AcousticGuitarsAdapter extends ArrayAdapter<AcousticGuitar> {
             viewHolder = (ViewHolder) convertView.getTag();
         }
         //Populate the data into the template view using the data object
-        viewHolder.tvTitle.setText(acousticGuitar.getTitle());
-        viewHolder.tvDescription.setText(acousticGuitar.getDescription());
-        int[] images = acousticGuitar.getImages();
+        viewHolder.tvTitle.setText(piano.getTitle());
+        viewHolder.tvDescription.setText(piano.getDescription());
+        int[] images = piano.getImages();
         int resID = images[0];
         viewHolder.ivInstrumentCover.setImageResource(resID);
         return convertView;

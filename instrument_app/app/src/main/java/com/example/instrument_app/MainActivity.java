@@ -13,20 +13,35 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-//        CardView acousticGuitars = (CardView)findViewById(R.id.AcousticGuitarCategory);
-//        acousticGuitars.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                // Operations to perform when the view is clicked
-//                Intent acousticGuitars = new Intent(getBaseContext(), ListActivity.class);
-//                startActivity(acousticGuitars);
-//            }
-//        });
     }
 
-    public void ShowListActivity(View view) {
-        Intent listActivity = new Intent(this, ListActivity.class);
+    public void ShowAcousticGuitars(View view) {
+        Intent listActivity = new Intent(this, ListActivity.class).
+                putExtra(Intent.EXTRA_TEXT,"acoustic guitars");
+        startActivity(listActivity);
+    }
+
+    public void ShowElectricGuitars(View view) {
+        Intent listActivity = new Intent(this, ListActivity.class).
+            putExtra(Intent.EXTRA_TEXT,"electric guitars");
+        startActivity(listActivity);
+    }
+
+    public void ShowPianos(View view) {
+        Intent listActivity = new Intent(this, ListActivity.class).
+                putExtra(Intent.EXTRA_TEXT,"pianos");
+        startActivity(listActivity);
+    }
+
+    public void ShowUkuleles(View view) {
+        Intent listActivity = new Intent(this, ListActivity.class).
+                putExtra(Intent.EXTRA_TEXT,"ukuleles");
+        startActivity(listActivity);
+    }
+
+    public void ShowDrums(View view) {
+        Intent listActivity = new Intent(this, ListActivity.class).
+                putExtra(Intent.EXTRA_TEXT,"drums");
         startActivity(listActivity);
     }
 }
