@@ -9,25 +9,24 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import java.util.ArrayList;
 
-public class AcousticGuitarsAdapter extends ArrayAdapter<AcousticGuitar> {
+//Adapting instuments into a list view
+public class InstrumentAdapter extends ArrayAdapter<Instrument> {
 
-     private static class ViewHolder{
-           public ImageView ivAcousticGuitar;
-           public TextView  tvTitle;
-           public TextView tvPrice;
-     }
+    private static class ViewHolder {
+        public ImageView ivInstrumentCover;
+        public TextView tvTitle;
+        public TextView tvPrice;
+    }
 
-    public AcousticGuitarsAdapter(Context context, ArrayList<AcousticGuitar> acousticGuitars){
-         super(context, 0, acousticGuitars);
-     }
+    public InstrumentAdapter(Context context, ArrayList<Instrument> instruments){
+        super(context, 0, instruments);
+    }
 
-    //translates a particular 'Book' given a position
-    // into a relevant row within an AdapterView
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
 
         //get the data item for this position
-        final AcousticGuitar acousticGuitar = getItem(position);
+        final Instrument instrument = getItem(position);
         //check if an existing view is being reused,
         // otherwise inflate the view
 
@@ -36,7 +35,7 @@ public class AcousticGuitarsAdapter extends ArrayAdapter<AcousticGuitar> {
             viewHolder = new ViewHolder();
             LayoutInflater inflater = (LayoutInflater) getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             convertView = inflater.inflate(R.layout.instrument_list_view_item, parent, false);
-            viewHolder.ivAcousticGuitar = (ImageView) convertView.findViewById(R.id.ivAcousticGuitarCover);
+            viewHolder.ivInstrumentCover = (ImageView) convertView.findViewById(R.id.ivInstrumentCover);
             viewHolder.tvTitle = (TextView) convertView.findViewById(R.id.tvTitle);
             viewHolder.tvPrice = (TextView) convertView.findViewById(R.id.tvPrice);
             convertView.setTag(viewHolder);
@@ -44,11 +43,11 @@ public class AcousticGuitarsAdapter extends ArrayAdapter<AcousticGuitar> {
             viewHolder = (ViewHolder) convertView.getTag();
         }
         //Populate the data into the template view using the data object
-        viewHolder.tvTitle.setText(acousticGuitar.getTitle());
-        viewHolder.tvPrice.setText("$" + acousticGuitar.getPrice());
-        int[] images = acousticGuitar.getImages();
+        viewHolder.tvTitle.setText(instrument.getTitle());
+        viewHolder.tvPrice.setText("$" + instrument.getPrice());
+        int[] images = instrument.getImages();
         int resID = images[0];
-        viewHolder.ivAcousticGuitar.setImageResource(resID);
+        viewHolder.ivInstrumentCover.setImageResource(resID);
         return convertView;
     }
 }

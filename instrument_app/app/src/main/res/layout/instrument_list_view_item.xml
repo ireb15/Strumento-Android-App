@@ -16,7 +16,7 @@
         android:background="#FFECB3">
 
         <ImageView
-            android:id="@+id/ivAcousticGuitarCover"
+            android:id="@+id/ivInstrumentCover"
             android:layout_width="112dp"
             android:layout_height="match_parent" />
 

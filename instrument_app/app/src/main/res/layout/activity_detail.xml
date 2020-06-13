@@ -10,9 +10,7 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#FFF8E1"
-        >
-
+        android:background="#FFF8E1">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -20,9 +18,8 @@
             android:orientation="vertical">
 
             <HorizontalScrollView
-                android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:fillViewport="true">
+                android:layout_width="match_parent">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -30,7 +27,7 @@
                     android:orientation="horizontal">
 
                     <ImageView
-                        android:id="@+id/ivAcousticGuitarCover1"
+                        android:id="@+id/ivInstrumentCover1"
                         android:layout_width="match_parent"
                         android:layout_height="280dp"
                         android:paddingLeft= "50dp"
@@ -38,7 +35,7 @@
                         />
 
                     <ImageView
-                        android:id="@+id/ivAcousticGuitarCover2"
+                        android:id="@+id/ivInstrumentCover2"
                         android:layout_width="match_parent"
                         android:layout_height="280dp"
                         android:layout_gravity="center_horizontal"
@@ -47,7 +44,7 @@
                         />
 
                     <ImageView
-                        android:id="@+id/ivAcousticGuitarCover3"
+                        android:id="@+id/ivInstrumentCover3"
                         android:layout_width="match_parent"
                         android:layout_height="280dp"
                         android:layout_gravity="center_horizontal"
@@ -56,7 +53,6 @@
                         />
                 </LinearLayout>
             </HorizontalScrollView>
-
 
             <View
                 android:layout_width="match_parent"
@@ -122,7 +118,6 @@
                 android:paddingLeft="16dp"
                 android:paddingRight="16dp"
                 android:textSize="22sp" />
-
         </LinearLayout>
     </ScrollView>
 </LinearLayout>
