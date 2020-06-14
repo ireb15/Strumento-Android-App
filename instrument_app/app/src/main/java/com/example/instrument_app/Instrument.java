@@ -120,14 +120,14 @@ public class Instrument implements Serializable {
 
     public static ArrayList<Instrument> getTopPicks() { return topPicks; }
 
-    public ArrayList<Instrument> getCategoryList(String category) {
-        if (category == "Acoustic guitars") {
+    public static ArrayList<Instrument> getCategoryList(String category) {
+        if (category.equals("Acoustic guitars")) {
             return acousticGuitarList;
-        } else if (category == "Electric Guitars") {
+        } else if (category.equals("Electric Guitars")) {
             return electricGuitarList;
-        } else if (category == "Pianos") {
+        } else if (category.equals("Pianos")) {
             return pianoList;
-        } else if (category == "Ukuleles") {
+        } else if (category.equals("Ukuleles")) {
             return ukuleleList;
         } else {
             return drumsList;
@@ -135,10 +135,17 @@ public class Instrument implements Serializable {
     }
 
     public void updateTopPicks(Instrument instrument) {
-        if (instrument.category == "Acoustic Guitars") {
-            //topPicks
+        if (instrument.category.equals("Acoustic Guitars")) {
+            topPicks.set(0, instrument);
+        } else if (instrument.category.equals("Electric Guitars")) {
+            topPicks.set(1, instrument);
+        } else if (instrument.category.equals("Pianos")) {
+            topPicks.set(2, instrument);
+        } else if (instrument.category.equals("Ukuleles")) {
+            topPicks.set(3, instrument);
+        } else {
+            topPicks.set(4, instrument);
         }
-        return;
     }
 }
 

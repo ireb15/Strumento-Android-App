@@ -45,18 +45,9 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setNestedScrollingEnabled(false);
         recyclerView.setLayoutManager(new LinearLayoutManager(this,
                 LinearLayoutManager.HORIZONTAL, false));
-        //ArrayList<Instrument> topPicks = Instrument.getTopPicks();
-        ArrayList<Instrument> topPicks = new ArrayList<Instrument>();
+        ArrayList<Instrument> topPicks = Instrument.getTopPicks();
         topPicksAdapter = new TopPicksAdapter(this, topPicks);
         recyclerView.setAdapter(topPicksAdapter);
-
-        int[] testImages = {R.drawable.bluthner_piano_1, R.drawable.bosendorfer_piano_1, R.drawable.british_drum_company_drums_1, R.drawable.c_bechstein_piano_1, R.drawable.canopus_drums_1};
-
-        for (int i = 0; i < 5; i++) {
-            int[] testImage = {testImages[i]};
-            topPicks.add(new Instrument("Test"+i, 1, "Test", "Test",
-                    "Test", "Test", "Test", "Test", 51+i, testImage, "Acoustic Guitar"));
-        }
 
         MainActivity.this.setTitle("Strumento");
     }

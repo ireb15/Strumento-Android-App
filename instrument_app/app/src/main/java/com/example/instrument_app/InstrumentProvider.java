@@ -273,6 +273,11 @@ public class InstrumentProvider {
             AcousticGuitar acousticGuitar = new AcousticGuitar(title, price, brand, colour,
                     condition, location, description, seller, id, images3, "Acoustic Guitars");
             acousticGuitars.add(acousticGuitar);
+            // Default (dummy) top pick for Acoustic Guitars: Taylor Acoustic Guitar
+            if (i == 4) {
+                acousticGuitar.setViews();
+                Instrument.addTopPicks(acousticGuitar);
+            }
         }
         return Instrument.getAcousticGuitarList();
     }
@@ -300,6 +305,11 @@ public class InstrumentProvider {
             ElectricGuitar electricGuitar = new ElectricGuitar(title, price, brand, colour,
                     condition, location, description, seller, id, images3, "Electric Guitars");
             electricGuitars.add(electricGuitar);
+            // Default (dummy) top pick for Electric Guitars: Fender Electric Guitar
+            if (i == 10) {
+                electricGuitar.setViews();
+                Instrument.addTopPicks(electricGuitar);
+            }
         }
         return Instrument.getElectricGuitarList();
     }
@@ -327,6 +337,11 @@ public class InstrumentProvider {
             Piano piano = new Piano(title, price, brand, colour,
                     condition, location, description, seller, id, images3, "Pianos");
             pianos.add(piano);
+            // Default (dummy) top pick for Pianos: Bluthner Piano
+            if (i == 21) {
+                piano.setViews();
+                Instrument.addTopPicks(piano);
+            }
         }
         return Instrument.getPianoList();
     }
@@ -354,6 +369,11 @@ public class InstrumentProvider {
             Ukulele ukulele = new Ukulele(title, price, brand, colour,
                     condition, location, description, seller, id, images3, "Ukuleles");
             ukuleles.add(ukulele);
+            // Default (dummy) top pick for Ukuleles: Makala Ukulele
+            if (i == 30) {
+                ukulele.setViews();
+                Instrument.addTopPicks(ukulele);
+            }
         }
         return Instrument.getUkuleleList();
     }
@@ -381,6 +401,11 @@ public class InstrumentProvider {
             Drum drum = new Drum(title, price, brand, colour,
                     condition, location, description, seller, id, images3, "Drums");
             drums.add(drum);
+            // Default (dummy) top pick for Drums: DW Drums
+            if (i == 41) {
+                drum.setViews();
+                Instrument.addTopPicks(drum);
+            }
         }
         return Instrument.getDrumsList();
     }
