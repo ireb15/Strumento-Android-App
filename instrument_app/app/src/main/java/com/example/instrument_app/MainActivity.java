@@ -41,7 +41,8 @@ public class MainActivity extends AppCompatActivity {
         recyclerView = (RecyclerView) findViewById(R.id.rvTopPicks);
         // Improve performance since changes in content do not change the layout size of the
         // RecyclerView
-        recyclerView.setHasFixedSize(true);
+        //recyclerView.setHasFixedSize(true);
+        recyclerView.setNestedScrollingEnabled(false);
 
         recyclerView.setLayoutManager(new LinearLayoutManager(this,
                 LinearLayoutManager.HORIZONTAL, false));
