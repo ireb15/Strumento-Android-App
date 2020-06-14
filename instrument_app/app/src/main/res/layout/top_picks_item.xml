@@ -6,7 +6,8 @@
     android:layout_height="153dp"
     android:layout_marginLeft="16dp"
     android:layout_marginRight="8dp"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:id="@+id/topPickItem">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"

@@ -5,7 +5,6 @@ package com.example.instrument_app;
 import com.example.instrument_app.R;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 
 public class InstrumentProvider {
     // Titles
@@ -275,7 +274,7 @@ public class InstrumentProvider {
             acousticGuitars.add(acousticGuitar);
             // Default (dummy) top pick for Acoustic Guitars: Taylor Acoustic Guitar
             if (i == 4) {
-                acousticGuitar.setViews();
+                acousticGuitar.incrementViews();
                 Instrument.addTopPicks(acousticGuitar);
             }
         }
@@ -307,7 +306,7 @@ public class InstrumentProvider {
             electricGuitars.add(electricGuitar);
             // Default (dummy) top pick for Electric Guitars: Fender Electric Guitar
             if (i == 10) {
-                electricGuitar.setViews();
+                electricGuitar.incrementViews();
                 Instrument.addTopPicks(electricGuitar);
             }
         }
@@ -339,7 +338,7 @@ public class InstrumentProvider {
             pianos.add(piano);
             // Default (dummy) top pick for Pianos: Bluthner Piano
             if (i == 21) {
-                piano.setViews();
+                piano.incrementViews();
                 Instrument.addTopPicks(piano);
             }
         }
@@ -371,7 +370,7 @@ public class InstrumentProvider {
             ukuleles.add(ukulele);
             // Default (dummy) top pick for Ukuleles: Makala Ukulele
             if (i == 30) {
-                ukulele.setViews();
+                ukulele.incrementViews();
                 Instrument.addTopPicks(ukulele);
             }
         }
@@ -403,7 +402,7 @@ public class InstrumentProvider {
             drums.add(drum);
             // Default (dummy) top pick for Drums: DW Drums
             if (i == 41) {
-                drum.setViews();
+                drum.incrementViews();
                 Instrument.addTopPicks(drum);
             }
         }

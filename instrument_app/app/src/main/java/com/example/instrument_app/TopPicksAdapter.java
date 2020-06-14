@@ -4,6 +4,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -18,6 +19,7 @@ public class TopPicksAdapter extends RecyclerView.Adapter<TopPicksAdapter.TopPic
     private Context context;
     private ArrayList<Instrument> topPicks;
 
+
     public TopPicksAdapter(Context context, ArrayList<Instrument> topPicks) {
         this.context = context;
         this.topPicks = topPicks;
@@ -27,8 +29,9 @@ public class TopPicksAdapter extends RecyclerView.Adapter<TopPicksAdapter.TopPic
     @NonNull
     @Override
     public TopPicksViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return new TopPicksViewHolder(LayoutInflater.from(context).inflate(R.layout.top_picks_item,
+         TopPicksViewHolder vh = new TopPicksViewHolder(LayoutInflater.from(context).inflate(R.layout.top_picks_item,
                 parent, false));
+         return vh;
     }
 
     @Override

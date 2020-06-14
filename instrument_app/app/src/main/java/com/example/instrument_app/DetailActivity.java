@@ -6,10 +6,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.lifecycle.Lifecycle;
-import androidx.lifecycle.OnLifecycleEvent;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 // Sets up the display of an instrument's attributes
@@ -45,13 +42,9 @@ public class DetailActivity extends AppCompatActivity {
         instrument = (Instrument)
                 intent.getSerializableExtra(ListActivity.INSTRUMENT_DETAIL_KEY);
         loadInstrument(instrument);
-        this.setTitle("Strumento");
-    }
 
-    @OnLifecycleEvent(Lifecycle.Event.ON_START)
-    protected void updateViews() {
         // Increment the number of views of this instrument
-        instrument.setViews();
+        instrument.incrementViews();
         // Update the Top Pick for this category
         ArrayList<Instrument> categoryList = instrument.getCategoryList(instrument.getCategory());
         for (int i = 0; i < categoryList.size(); i++) {
@@ -59,7 +52,22 @@ public class DetailActivity extends AppCompatActivity {
                 instrument.updateTopPicks(instrument);
             }
         }
+
+        this.setTitle("Strumento");
     }
+
+//    @OnLifecycleEvent(Lifecycle.Event.ON_START)
+//    protected void updateViews() {
+//        // Increment the number of views of this instrument
+//        instrument.setViews();
+//        // Update the Top Pick for this category
+//        ArrayList<Instrument> categoryList = instrument.getCategoryList(instrument.getCategory());
+//        for (int i = 0; i < categoryList.size(); i++) {
+//            if (categoryList.get(i).getViews() > instrument.getViews()) {
+//                instrument.updateTopPicks(instrument);
+//            }
+//        }
+//    }
 
     private void loadInstrument(Instrument instrument) {
         //change activity title

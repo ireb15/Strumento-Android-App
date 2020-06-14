@@ -114,7 +114,7 @@ public class Instrument implements Serializable {
         topPicks.add(instrument);
     }
 
-    public void setViews() {
+    public void incrementViews() {
         this.views++;
     }
 

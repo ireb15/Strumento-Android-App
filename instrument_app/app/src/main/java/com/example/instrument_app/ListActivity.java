@@ -73,7 +73,7 @@ public class ListActivity extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                // Launch the detail view passing book as an extra
+                // Launch the detail view passing the category as an extra
                 Intent intent = new Intent(ListActivity.this, DetailActivity.class);
                 intent.putExtra(INSTRUMENT_DETAIL_KEY, instrumentAdapter.getItem(position));
                 startActivity(intent);
