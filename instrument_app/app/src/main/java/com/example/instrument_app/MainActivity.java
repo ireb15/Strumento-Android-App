@@ -147,6 +147,13 @@ public class MainActivity extends AppCompatActivity implements TopPicksAdapter.O
     @Override
     public void onBackPressed() {
         setContentView(R.layout.activity_main);
+        recyclerView = (RecyclerView) findViewById(R.id.rvTopPicks);
+        recyclerView.setNestedScrollingEnabled(false);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this,
+                LinearLayoutManager.HORIZONTAL, false));
+        ArrayList<Instrument> topPicks = Instrument.getTopPicks();
+        topPicksAdapter = new TopPicksAdapter(this, topPicks);
+        recyclerView.setAdapter(topPicksAdapter);
         MainActivity.this.setTitle("Strumento");
     }
 
