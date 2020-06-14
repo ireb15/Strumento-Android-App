@@ -54,6 +54,7 @@ public class DetailActivity extends AppCompatActivity {
 
         // Increment the number of views of this instrument
         instrument.incrementViews();
+
         // Update the Top Pick for this category
         ArrayList<Instrument> categoryList = instrument.getCategoryList(instrument.getCategory());
         for (int i = 0; i < categoryList.size(); i++) {
@@ -65,21 +66,8 @@ public class DetailActivity extends AppCompatActivity {
         this.setTitle("Strumento");
     }
 
-//    @OnLifecycleEvent(Lifecycle.Event.ON_START)
-//    protected void updateViews() {
-//        // Increment the number of views of this instrument
-//        instrument.setViews();
-//        // Update the Top Pick for this category
-//        ArrayList<Instrument> categoryList = instrument.getCategoryList(instrument.getCategory());
-//        for (int i = 0; i < categoryList.size(); i++) {
-//            if (categoryList.get(i).getViews() > instrument.getViews()) {
-//                instrument.updateTopPicks(instrument);
-//            }
-//        }
-//    }
-
     private void loadInstrument(Instrument instrument) {
-        //change activity title
+        //Retrieve the details required to create the Detailed View
         this.setTitle(instrument.getTitle());
         tvTitle.setText(instrument.getTitle());
         tvPrice.setText("Price: $" + instrument.getPrice());

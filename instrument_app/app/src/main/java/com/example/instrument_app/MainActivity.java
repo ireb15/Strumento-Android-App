@@ -62,6 +62,7 @@ public class MainActivity extends AppCompatActivity implements TopPicksAdapter.O
         topPicksAdapter.notifyDataSetChanged();
     }
 
+    //Function for Animations
     private void setupWindowAnimations() {
         Slide slide = new Slide();
         slide.setDuration(5000);
@@ -118,13 +119,13 @@ public class MainActivity extends AppCompatActivity implements TopPicksAdapter.O
 
                 setContentView(R.layout.activity_list);
                 tvSearchResults = findViewById(R.id.tvSearchResults);
-
                 listView = (ListView) findViewById(R.id.listView);
                 instrumentAdapter = new InstrumentAdapter(MainActivity.this,
                         SearchArray);
                 listView.setAdapter(instrumentAdapter);
+
                 // Set activity title to search query
-                MainActivity.this.setTitle(query);
+                MainActivity.this.setTitle("Strumento");
                 if (SearchArray.size()==0) {
                     tvSearchResults.setText("Sorry, we found no results for: "+ "\""+query+"\"");
                 }else{
@@ -145,6 +146,7 @@ public class MainActivity extends AppCompatActivity implements TopPicksAdapter.O
     }
 
     @Override
+    //When the go back button is pressed, return to Main Activity
     public void onBackPressed() {
         setContentView(R.layout.activity_main);
         recyclerView = (RecyclerView) findViewById(R.id.rvTopPicks);
@@ -152,7 +154,7 @@ public class MainActivity extends AppCompatActivity implements TopPicksAdapter.O
         recyclerView.setLayoutManager(new LinearLayoutManager(this,
                 LinearLayoutManager.HORIZONTAL, false));
         ArrayList<Instrument> topPicks = Instrument.getTopPicks();
-        topPicksAdapter = new TopPicksAdapter(this, topPicks);
+        topPicksAdapter = new TopPicksAdapter(this, topPicks, this);
         recyclerView.setAdapter(topPicksAdapter);
         MainActivity.this.setTitle("Strumento");
     }
@@ -204,6 +206,7 @@ public class MainActivity extends AppCompatActivity implements TopPicksAdapter.O
         startActivity(listActivity);
     }
 
+    //If an item in the Top Picks is clicked, take the user to the detail view of that instrument
     @Override
     public void onTopPickClick(int position) {
         Intent intent = new Intent(MainActivity.this, DetailActivity.class)

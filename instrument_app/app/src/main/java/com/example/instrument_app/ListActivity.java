@@ -73,6 +73,7 @@ public class ListActivity extends AppCompatActivity {
 
     }
 
+    //Set up the Transitions
     private void setupWindowAnimations() {
         Slide slide = new Slide();
         slide.setDuration(1000);

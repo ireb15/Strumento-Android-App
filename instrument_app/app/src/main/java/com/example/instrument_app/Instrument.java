@@ -149,7 +149,7 @@ public class Instrument implements Serializable {
     }
 }
 
-// Acoustic com.example.instrument_app.Guitar Class
+// Acoustic Guitar Class
 class AcousticGuitar extends Instrument {
     public AcousticGuitar (String title, int price, String brand, String colour, String condition,
                            String location, String description, String seller, int id, int[] images, String category)
@@ -159,7 +159,7 @@ class AcousticGuitar extends Instrument {
     }
 }
 
-// Electric com.example.instrument_app.Guitar Class
+// Electric Guitar Class
 class ElectricGuitar extends Instrument {
     public ElectricGuitar (String title, int price, String brand, String colour, String condition,
                            String location, String description, String seller, int id, int[] images, String category)
@@ -169,7 +169,7 @@ class ElectricGuitar extends Instrument {
     }
 }
 
-// com.example.instrument_app.Piano Class
+// Piano Class
 class Piano extends Instrument {
     public Piano (String title, int price, String brand, String colour, String condition,
                   String location, String description, String seller, int id, int[] images, String category)
@@ -179,7 +179,7 @@ class Piano extends Instrument {
     }
 }
 
-// com.example.instrument_app.Ukulele Class
+// Ukulele Class
 class Ukulele extends Instrument {
     public Ukulele (String title, int price, String brand, String colour,
                   String condition, String location, String description, String seller, int id, int[] images, String category)
@@ -189,7 +189,7 @@ class Ukulele extends Instrument {
     }
 }
 
-// com.example.instrument_app.Drum Class
+// Drum Class
 class Drum extends Instrument {
     public Drum (String title, int price, String brand, String colour,
                   String condition, String location, String description, String seller, int id, int[] images, String category)

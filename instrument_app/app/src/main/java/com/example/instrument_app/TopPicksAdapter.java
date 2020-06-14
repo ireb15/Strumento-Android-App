@@ -34,6 +34,7 @@ public class TopPicksAdapter extends RecyclerView.Adapter<TopPicksAdapter.ViewHo
         return new ViewHolder(view, mOnTopPickListener);
     }
 
+    //BindViewHolder is reusing old view holders and binding new data in place of the old data.
     @Override
     public void onBindViewHolder(@NonNull ViewHolder vh, int position) {
         vh.topPickCategory.setText(topPicks.get(position).getCategory());
