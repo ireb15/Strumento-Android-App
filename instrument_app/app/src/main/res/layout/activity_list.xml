@@ -7,13 +7,26 @@
     android:orientation="vertical"
     tools:context=".ListActivity">
 
+    <TextView
+        android:id="@+id/tvSearchResults"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FFF8E1"
+        android:gravity="center"
+        android:text="text"
+        android:padding="16dp"
+        android:textSize="20sp"
+        />
+
     <ListView
         android:id="@+id/listView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#FFF8E1"
+        android:divider="@android:color/transparent"
         android:dividerHeight="10sp"
-        android:padding="16dp"
-        android:divider="@android:color/transparent" />
+        android:padding="16dp" />
+
+
 
 </LinearLayout>
