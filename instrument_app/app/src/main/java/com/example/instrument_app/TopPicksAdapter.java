@@ -1,41 +1,41 @@
 package com.example.instrument_app;
 
 import android.content.Context;
+import android.text.Layout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import org.w3c.dom.Text;
-
 import java.util.ArrayList;
 
-public class TopPicksAdapter extends RecyclerView.Adapter<TopPicksAdapter.TopPicksViewHolder> {
+public class TopPicksAdapter extends RecyclerView.Adapter<TopPicksAdapter.ViewHolder> {
     private Context context;
     private ArrayList<Instrument> topPicks;
+    private OnTopPickListener mOnTopPickListener;
 
-
-    public TopPicksAdapter(Context context, ArrayList<Instrument> topPicks) {
+    public TopPicksAdapter(Context context, ArrayList<Instrument> topPicks,
+                           OnTopPickListener onTopPickListener) {
         this.context = context;
         this.topPicks = topPicks;
+        this.mOnTopPickListener = onTopPickListener;
     }
 
     // Create new views (invoked by the layout manager)
     @NonNull
     @Override
-    public TopPicksViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-         TopPicksViewHolder vh = new TopPicksViewHolder(LayoutInflater.from(context).inflate(R.layout.top_picks_item,
-                parent, false));
-         return vh;
+    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int i) {
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.top_picks_item,
+                parent, false);
+        return new ViewHolder(view, mOnTopPickListener);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull TopPicksViewHolder vh, int position) {
+    public void onBindViewHolder(@NonNull ViewHolder vh, int position) {
         vh.topPickCategory.setText(topPicks.get(position).getCategory());
         vh.topPickImage.setImageResource(topPicks.get(position).getImages()[0]);
     }
@@ -45,14 +45,27 @@ public class TopPicksAdapter extends RecyclerView.Adapter<TopPicksAdapter.TopPic
         return topPicks.size();
     }
 
-    public class TopPicksViewHolder extends RecyclerView.ViewHolder {
+    public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
         private ImageView topPickImage;
         private TextView topPickCategory;
+        OnTopPickListener onTopPickListener;
 
-        public TopPicksViewHolder(View view) {
+        public ViewHolder(View view, OnTopPickListener onTopPickListener) {
             super(view);
             topPickImage = view.findViewById(R.id.topPickImage);
             topPickCategory = view.findViewById(R.id.topPickCategory);
+            this.onTopPickListener = onTopPickListener;
+
+            itemView.setOnClickListener(this);
         }
+
+        @Override
+        public void onClick(View view) {
+            onTopPickListener.onTopPickClick(getAdapterPosition());
+        }
+    }
+
+    public interface OnTopPickListener {
+        void onTopPickClick(int position);
     }
 }

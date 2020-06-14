@@ -22,6 +22,7 @@ public class DetailActivity extends AppCompatActivity {
     private TextView tvLocation;
     private TextView tvColour;
     private static Instrument instrument;
+    private static Instrument topPick;
 
 
     @Override
@@ -38,10 +39,18 @@ public class DetailActivity extends AppCompatActivity {
         tvLocation = (TextView) findViewById(R.id.tvLocation);
         tvColour = (TextView) findViewById(R.id.tvColour);
 
-        Intent intent = getIntent();
-        instrument = (Instrument)
-                intent.getSerializableExtra(ListActivity.INSTRUMENT_DETAIL_KEY);
-        loadInstrument(instrument);
+        if (getIntent().hasExtra("Top Pick")) {
+            // Load instrument selected from the "Top Picks" RecyclerView
+            Intent intent =  getIntent();
+            topPick = intent.getParcelableExtra("Top Pick");
+            loadInstrument(topPick);
+        } else {
+            // Load instrument selected from the ListActivity
+            Intent intent = getIntent();
+            instrument = (Instrument)
+                    intent.getSerializableExtra(ListActivity.INSTRUMENT_DETAIL_KEY);
+            loadInstrument(instrument);
+        }
 
         // Increment the number of views of this instrument
         instrument.incrementViews();

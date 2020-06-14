@@ -27,11 +27,12 @@ import static com.example.instrument_app.Instrument.getInstrumentsList;
 
 import java.util.ArrayList;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements TopPicksAdapter.OnTopPickListener {
     private TextView tvSearchResults;
     static String category;
     ListView listView;
     InstrumentAdapter instrumentAdapter;
+    private static ArrayList<Instrument> topPicks;
 
     private RecyclerView recyclerView;
     private RecyclerView.Adapter topPicksAdapter;
@@ -49,8 +50,8 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setNestedScrollingEnabled(false);
         recyclerView.setLayoutManager(new LinearLayoutManager(this,
                 LinearLayoutManager.HORIZONTAL, false));
-        ArrayList<Instrument> topPicks = Instrument.getTopPicks();
-        topPicksAdapter = new TopPicksAdapter(this, topPicks);
+        topPicks = Instrument.getTopPicks();
+        topPicksAdapter = new TopPicksAdapter(this, topPicks, this);
         recyclerView.setAdapter(topPicksAdapter);
 
         MainActivity.this.setTitle("Strumento");
@@ -194,5 +195,12 @@ public class MainActivity extends AppCompatActivity {
                 putExtra(Intent.EXTRA_TEXT,"Drums");
         category = "Drums";
         startActivity(listActivity);
+    }
+
+    @Override
+    public void onTopPickClick(int position) {
+        Intent intent = new Intent(MainActivity.this, DetailActivity.class)
+                .putExtra("Top Pick", topPicks.get(position));
+        startActivity(intent);
     }
 }
