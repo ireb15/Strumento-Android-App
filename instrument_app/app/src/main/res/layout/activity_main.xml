@@ -54,6 +54,7 @@
                 style="@style/CategoryCards"
                 android:onClick="ShowAcousticGuitars">
 
+
                 <LinearLayout
                     style="@style/CategoryLL">
 
