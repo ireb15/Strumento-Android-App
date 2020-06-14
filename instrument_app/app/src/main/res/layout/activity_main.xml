@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,162 +7,154 @@
     android:orientation="vertical"
     tools:context=".ListActivity">
 
-
-    <androidx.core.widget.NestedScrollView
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:padding="16dp"
+        android:background="#FFF8E1">
 
-        <RelativeLayout
+        <LinearLayout
+            android:id="@+id/llTopPicks"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:padding="16dp"
-            android:background="#FFF8E1">
+            android:layout_height="184dp"
+            android:background="@android:color/transparent"
+            android:orientation="vertical" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:text="TOP PICKS"
+                android:layout_gravity="center"
+                android:textSize="18sp"/>
 
             <LinearLayout
-                android:id="@+id/llTopPicks"
                 android:layout_width="match_parent"
-                android:layout_height="184dp"
-                android:background="#FFECB3"
-                android:orientation="vertical" >
+                android:layout_height="0dp"
+                android:layout_weight="5">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvTopPicks"
+                    android:scrollbars="horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/AcousticGuitarCategory"
+            app:cardCornerRadius="12dp"
+            android:layout_below="@id/llTopPicks"
+            style="@style/CategoryCards"
+            android:onClick="ShowAcousticGuitars">
+
+            <LinearLayout
+                style="@style/CategoryLL">
+
+                <ImageView
+                     android:id="@+id/ivAcousticGuitarGlyph"
+                     style="@style/CategoryImage"
+                     android:src="@drawable/fender_acoustic_1" />
 
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="0dp"
-                    android:layout_weight="1"
-                    android:text="TOP PICKS"
-                    android:layout_gravity="center"
-                    android:textSize="18sp"/>
+                    android:id="@+id/tvAcousticGuitar"
+                    android:text="Acoustic Guitars"
+                    style="@style/CategoryTitle"/>
 
-                <HorizontalScrollView
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="5">
-
-                    <androidx.recyclerview.widget.RecyclerView
-                        android:id="@+id/rvTopPicks"
-                        android:scrollbars="horizontal"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent" />
-
-                </HorizontalScrollView>
             </LinearLayout>
+        </androidx.cardview.widget.CardView>
 
-            <androidx.cardview.widget.CardView
-                android:id="@+id/AcousticGuitarCategory"
-                app:cardCornerRadius="12dp"
-                android:layout_below="@id/llTopPicks"
-                style="@style/CategoryCards"
-                android:onClick="ShowAcousticGuitars">
+        <androidx.cardview.widget.CardView
+            android:id="@+id/ElectricGuitarCategory"
+            app:cardCornerRadius="12dp"
+            android:layout_below="@id/AcousticGuitarCategory"
+            style="@style/CategoryCards"
+            android:onClick="ShowElectricGuitars">
 
+            <LinearLayout
+                style="@style/CategoryLL">
 
-                <LinearLayout
-                    style="@style/CategoryLL">
+                <ImageView
+                    android:id="@+id/ivElectricGuitarGlyph"
+                    style="@style/CategoryImage"
+                    android:src="@drawable/fender_electric_1"/>
 
-                    <ImageView
-                        android:id="@+id/ivAcousticGuitarGlyph"
-                        style="@style/CategoryImage"
-                        android:src="@drawable/fender_acoustic_1" />
+                <TextView
+                    android:id="@+id/tvElectricGuitar"
+                    android:text="Electric Guitars"
+                    style="@style/CategoryTitle"/>
 
-                    <TextView
-                        android:id="@+id/tvAcousticGuitar"
-                        android:text="Acoustic Guitars"
-                        style="@style/CategoryTitle"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
 
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
+            android:id="@+id/PianoCategory"
+            app:cardCornerRadius="12dp"
+            android:layout_below="@id/ElectricGuitarCategory"
+            style="@style/CategoryCards"
+            android:onClick="ShowPianos">
 
-            <androidx.cardview.widget.CardView
-                android:id="@+id/ElectricGuitarCategory"
-                app:cardCornerRadius="12dp"
-                android:layout_below="@id/AcousticGuitarCategory"
-                style="@style/CategoryCards"
-                android:onClick="ShowElectricGuitars">
+            <LinearLayout
+                style="@style/CategoryLL">
 
-                <LinearLayout
-                    style="@style/CategoryLL">
+                <ImageView
+                    android:id="@+id/ivPianoGlyph"
+                    style="@style/CategoryImage"
+                    android:src="@drawable/c_bechstein_piano_1"/>
 
-                    <ImageView
-                        android:id="@+id/ivElectricGuitarGlyph"
-                        style="@style/CategoryImage"
-                        android:src="@drawable/fender_electric_1"/>
+                <TextView
+                    android:id="@+id/tvPiano"
+                    android:text="Pianos"
+                    style="@style/CategoryTitle"/>
 
-                    <TextView
-                        android:id="@+id/tvElectricGuitar"
-                        android:text="Electric Guitars"
-                        style="@style/CategoryTitle"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
 
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
+            android:id="@+id/UkuleleCategory"
+            app:cardCornerRadius="12dp"
+            android:layout_below="@id/PianoCategory"
+            style="@style/CategoryCards"
+            android:onClick="ShowUkuleles">
 
-            <androidx.cardview.widget.CardView
-                android:id="@+id/PianoCategory"
-                app:cardCornerRadius="12dp"
-                android:layout_below="@id/ElectricGuitarCategory"
-                style="@style/CategoryCards"
-                android:onClick="ShowPianos">
+            <LinearLayout
+                style="@style/CategoryLL">
 
-                <LinearLayout
-                    style="@style/CategoryLL">
+                <ImageView
+                    android:id="@+id/ivUluleleGlyph"
+                    style="@style/CategoryImage"
+                    android:src="@drawable/makala_ukulele1"/>
 
-                    <ImageView
-                        android:id="@+id/ivPianoGlyph"
-                        style="@style/CategoryImage"
-                        android:src="@drawable/c_bechstein_piano_1"/>
+                <TextView
+                    android:id="@+id/tvUkulele"
+                    android:text="Ukuleles"
+                    style="@style/CategoryTitle"/>
 
-                    <TextView
-                        android:id="@+id/tvPiano"
-                        android:text="Pianos"
-                        style="@style/CategoryTitle"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
 
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
+            android:id="@+id/DrumsCategory"
+            app:cardCornerRadius="12dp"
+            android:layout_below="@id/UkuleleCategory"
+            style="@style/CategoryCards"
+            android:onClick="ShowDrums">
 
-            <androidx.cardview.widget.CardView
-                android:id="@+id/UkuleleCategory"
-                app:cardCornerRadius="12dp"
-                android:layout_below="@id/PianoCategory"
-                style="@style/CategoryCards"
-                android:onClick="ShowUkuleles">
+            <LinearLayout
+                style="@style/CategoryLL">
 
+                <ImageView
+                    android:id="@+id/ivDrumsGlyph"
+                    style="@style/CategoryImage"
+                    android:src="@drawable/tama_drums1"/>
 
-                <LinearLayout
-                    style="@style/CategoryLL">
+                <TextView
+                    android:id="@+id/tvDrums"
+                    android:text="Drums"
+                    style="@style/CategoryTitle"/>
 
-                    <ImageView
-                        android:id="@+id/ivUluleleGlyph"
-                        style="@style/CategoryImage"
-                        android:src="@drawable/makala_ukulele1"/>
-
-                    <TextView
-                        android:id="@+id/tvUkulele"
-                        android:text="Ukuleles"
-                        style="@style/CategoryTitle"/>
-
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:id="@+id/DrumsCategory"
-                app:cardCornerRadius="12dp"
-                android:layout_below="@id/UkuleleCategory"
-                style="@style/CategoryCards"
-                android:onClick="ShowDrums">
-
-                <LinearLayout
-                    style="@style/CategoryLL">
-
-                    <ImageView
-                        android:id="@+id/ivDrumsGlyph"
-                        style="@style/CategoryImage"
-                        android:src="@drawable/tama_drums1"/>
-
-                    <TextView
-                        android:id="@+id/tvDrums"
-                        android:text="Drums"
-                        style="@style/CategoryTitle"/>
-
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
-        </RelativeLayout>
-    </androidx.core.widget.NestedScrollView>
-</LinearLayout>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+    </RelativeLayout>
+</androidx.core.widget.NestedScrollView>

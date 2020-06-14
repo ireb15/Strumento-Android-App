@@ -2,6 +2,8 @@ package com.example.instrument_app;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
+import androidx.lifecycle.Lifecycle;
+import androidx.lifecycle.OnLifecycleEvent;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
 import android.app.Activity;

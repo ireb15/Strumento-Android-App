@@ -2,36 +2,32 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="wrap_content"
+    android:layout_width="118dp"
     android:layout_height="153dp"
     android:layout_marginLeft="16dp"
-    android:layout_marginRight="16dp">
+    android:layout_marginRight="8dp"
+    android:orientation="vertical">
 
-    <LinearLayout
-        android:layout_width="110dp"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="5"
+        app:cardCornerRadius="10dp">
 
-        <androidx.cardview.widget.CardView
+        <ImageView
+            android:id="@+id/topPickImage"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="5"
-            app:cardCornerRadius="10dp">
+            android:layout_height="match_parent"/>
 
-            <ImageView
-                android:id="@+id/topPickImage"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"/>
+    </androidx.cardview.widget.CardView>
 
-        </androidx.cardview.widget.CardView>
+    <TextView
+        android:id="@+id/topPickCategory"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:textAlignment="center"
+        android:textSize="15sp"
+        android:layout_gravity="center"/>
 
-        <TextView
-            android:id="@+id/topPickCategory"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:textAlignment="center"
-            android:textSize="15sp"/>
-
-    </LinearLayout>
 </LinearLayout>
