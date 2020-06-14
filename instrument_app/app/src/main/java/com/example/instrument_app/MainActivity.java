@@ -1,17 +1,7 @@
 package com.example.instrument_app;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.lifecycle.Lifecycle;
-import androidx.lifecycle.OnLifecycleEvent;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-import androidx.appcompat.widget.SearchView;
-import androidx.recyclerview.widget.LinearLayoutManager;
-
 import android.content.Intent;
 import android.os.Bundle;
-import android.transition.Explode;
-import android.transition.Fade;
 import android.transition.Slide;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -20,12 +10,16 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SearchView;
+import androidx.lifecycle.Lifecycle;
+import androidx.lifecycle.OnLifecycleEvent;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import java.util.ArrayList;
 
 import static com.example.instrument_app.Instrument.getInstrumentsList;
-
-
-import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity implements TopPicksAdapter.OnTopPickListener {
     private TextView tvSearchResults;
