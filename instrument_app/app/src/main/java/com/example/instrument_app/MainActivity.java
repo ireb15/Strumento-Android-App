@@ -10,6 +10,9 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.transition.Explode;
+import android.transition.Fade;
+import android.transition.Slide;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -38,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        setupWindowAnimations();
         InstrumentProvider.generateAllInstruments();
 
         // Initialise the RecyclerView for the "Top Picks" section
@@ -55,6 +59,16 @@ public class MainActivity extends AppCompatActivity {
     @OnLifecycleEvent(Lifecycle.Event.ON_START)
     protected void updateTopPicks() {
         topPicksAdapter.notifyDataSetChanged();
+    }
+
+    private void setupWindowAnimations() {
+        Slide slide = new Slide();
+        slide.setDuration(5000);
+        getWindow().setExitTransition(slide);
+
+        Slide slide2 = new Slide();
+        slide.setDuration(5000);
+        getWindow().setReenterTransition(slide2);
     }
 
     //Registers when a particular instrument is selected
@@ -151,7 +165,6 @@ public class MainActivity extends AppCompatActivity {
         Intent listActivity = new Intent(this, ListActivity.class).
                 putExtra(Intent.EXTRA_TEXT,"Acoustic Guitars");
         category = "Acoustic Guitars";
-
         startActivity(listActivity);
     }
 

@@ -9,6 +9,9 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.transition.Explode;
+import android.transition.Fade;
+import android.transition.Slide;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -33,6 +36,8 @@ public class ListActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_list);
+        setupWindowAnimations();
+
         this.setTitle("Strumento");
         tvSearchResults = findViewById(R.id.tvSearchResults);
         listView = (ListView) findViewById(R.id.listView);
@@ -65,6 +70,17 @@ public class ListActivity extends AppCompatActivity {
         tvSearchResults.setText(category);
         LinearLayoutManager lm = new LinearLayoutManager(this);
         setupSelectedInstrumentListener();
+
+    }
+
+    private void setupWindowAnimations() {
+        Slide slide = new Slide();
+        slide.setDuration(1000);
+        getWindow().setEnterTransition(slide);
+
+        Slide slide2 = new Slide();
+        slide.setDuration(1000);
+        getWindow().setReturnTransition(slide2);
 
     }
 
