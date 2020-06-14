@@ -26,6 +26,7 @@ public class DetailActivity extends AppCompatActivity {
     private TextView tvColour;
     private static Instrument instrument;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,6 +45,7 @@ public class DetailActivity extends AppCompatActivity {
         instrument = (Instrument)
                 intent.getSerializableExtra(ListActivity.INSTRUMENT_DETAIL_KEY);
         loadInstrument(instrument);
+        this.setTitle("Strumento");
     }
 
     @OnLifecycleEvent(Lifecycle.Event.ON_START)

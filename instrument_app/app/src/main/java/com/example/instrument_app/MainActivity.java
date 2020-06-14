@@ -58,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
                     "Test", "Test", "Test", "Test", 51+i, testImage, "Acoustic Guitar"));
         }
 
-        MainActivity.this.setTitle("Instrument App");
+        MainActivity.this.setTitle("Strumento");
     }
 
     @OnLifecycleEvent(Lifecycle.Event.ON_START)
@@ -98,16 +98,17 @@ public class MainActivity extends AppCompatActivity {
 
 
                 ArrayList<Instrument> SearchArray = new ArrayList<>();
-                //InstrumentProvider.generateAllInstruments();
+                //Go through all instruments and check if the query applies to any of them
                 for (int i = 0; i < 50; i++) {
                     String brand = getInstrumentsList().get(i).getBrand();
-                    if (brand.equalsIgnoreCase(query)) {
+                    String colour = getInstrumentsList().get(i).getColour();
+                    String location = getInstrumentsList().get(i).getLocation();
+                    String seller = getInstrumentsList().get(i).getSeller();
+                    if ((brand.equalsIgnoreCase(query)) || (colour.equalsIgnoreCase(query)) ||
+                            (location.equalsIgnoreCase(query))||(seller.equalsIgnoreCase(query))){
                         SearchArray.add(getInstrumentsList().get(i));
                     }
                 }
-
-
-
 
                 setContentView(R.layout.activity_list);
                 tvSearchResults = findViewById(R.id.tvSearchResults);
@@ -116,17 +117,16 @@ public class MainActivity extends AppCompatActivity {
                 instrumentAdapter = new InstrumentAdapter(MainActivity.this,
                         SearchArray);
                 listView.setAdapter(instrumentAdapter);
-                LinearLayoutManager lm = new LinearLayoutManager(MainActivity.this);
-                setupSelectedInstrumentListener();
-
                 // Set activity title to search query
                 MainActivity.this.setTitle(query);
                 if (SearchArray.size()==0) {
                     tvSearchResults.setText("Sorry, we found no results for: "+ "\""+query+"\"");
                 }else{
-                    tvSearchResults.setText(" ");
+                    tvSearchResults.setText("Results for: " + "\""+query+"\"");
                 }
 
+                LinearLayoutManager lm = new LinearLayoutManager(MainActivity.this);
+                setupSelectedInstrumentListener();
                 return true;
             }
 
@@ -141,7 +141,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         setContentView(R.layout.activity_main);
-        MainActivity.this.setTitle("Instrument App");
+        MainActivity.this.setTitle("Strumento");
     }
 
     @Override
@@ -158,37 +158,37 @@ public class MainActivity extends AppCompatActivity {
 
     public void ShowAcousticGuitars(View view) {
         Intent listActivity = new Intent(this, ListActivity.class).
-                putExtra(Intent.EXTRA_TEXT,"acoustic guitars");
-        category = "acoustic guitars";
+                putExtra(Intent.EXTRA_TEXT,"Acoustic Guitars");
+        category = "Acoustic Guitars";
 
         startActivity(listActivity);
     }
 
     public void ShowElectricGuitars(View view) {
         Intent listActivity = new Intent(this, ListActivity.class).
-            putExtra(Intent.EXTRA_TEXT,"electric guitars");
-        category = "electric guitars";
+            putExtra(Intent.EXTRA_TEXT,"Electric Guitars");
+        category = "Electric Guitars";
         startActivity(listActivity);
     }
 
     public void ShowPianos(View view) {
         Intent listActivity = new Intent(this, ListActivity.class).
-                putExtra(Intent.EXTRA_TEXT,"pianos");
-        category = "pianos";
+                putExtra(Intent.EXTRA_TEXT,"Pianos");
+        category = "Pianos";
         startActivity(listActivity);
     }
 
     public void ShowUkuleles(View view) {
         Intent listActivity = new Intent(this, ListActivity.class).
-                putExtra(Intent.EXTRA_TEXT,"ukuleles");
-        category = "ukuleles";
+                putExtra(Intent.EXTRA_TEXT,"Ukuleles");
+        category = "Ukuleles";
         startActivity(listActivity);
     }
 
     public void ShowDrums(View view) {
         Intent listActivity = new Intent(this, ListActivity.class).
-                putExtra(Intent.EXTRA_TEXT,"drums");
-        category = "drums";
+                putExtra(Intent.EXTRA_TEXT,"Drums");
+        category = "Drums";
         startActivity(listActivity);
     }
 }
