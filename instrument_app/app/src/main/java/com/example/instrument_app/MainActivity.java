@@ -95,16 +95,17 @@ public class MainActivity extends AppCompatActivity {
 
 
                 ArrayList<Instrument> SearchArray = new ArrayList<>();
-                //InstrumentProvider.generateAllInstruments();
+                //Go through all instruments and check if the query applies to any of them
                 for (int i = 0; i < 50; i++) {
                     String brand = getInstrumentsList().get(i).getBrand();
-                    if (brand.equalsIgnoreCase(query)) {
+                    String colour = getInstrumentsList().get(i).getColour();
+                    String location = getInstrumentsList().get(i).getLocation();
+                    String seller = getInstrumentsList().get(i).getSeller();
+                    if ((brand.equalsIgnoreCase(query)) || (colour.equalsIgnoreCase(query)) ||
+                            (location.equalsIgnoreCase(query))||(seller.equalsIgnoreCase(query))){
                         SearchArray.add(getInstrumentsList().get(i));
                     }
                 }
-
-
-
 
                 setContentView(R.layout.activity_list);
                 tvSearchResults = findViewById(R.id.tvSearchResults);
