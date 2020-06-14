@@ -115,9 +115,6 @@ public class MainActivity extends AppCompatActivity {
                 instrumentAdapter = new InstrumentAdapter(MainActivity.this,
                         SearchArray);
                 listView.setAdapter(instrumentAdapter);
-                LinearLayoutManager lm = new LinearLayoutManager(MainActivity.this);
-                setupSelectedInstrumentListener();
-
                 // Set activity title to search query
                 MainActivity.this.setTitle(query);
                 if (SearchArray.size()==0) {
@@ -126,6 +123,8 @@ public class MainActivity extends AppCompatActivity {
                     tvSearchResults.setText(" ");
                 }
 
+                LinearLayoutManager lm = new LinearLayoutManager(MainActivity.this);
+                setupSelectedInstrumentListener();
                 return true;
             }
 
