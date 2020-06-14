@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -11,6 +12,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.TextView;
+
 import java.util.ArrayList;
 
 //Displays list view of the selected category of instruments and results from search
@@ -20,6 +23,7 @@ public class ListActivity extends AppCompatActivity {
     ListView listView;
     InstrumentAdapter instrumentAdapter;
     static String category;
+    private TextView tvSearchResults;
 
     //Determines and sets up the list view for the category chosen
     @Override
@@ -27,24 +31,26 @@ public class ListActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_list);
+        this.setTitle("Strumento");
+        tvSearchResults = findViewById(R.id.tvSearchResults);
         listView = (ListView) findViewById(R.id.listView);
 
         Intent intent = getIntent();
         category = intent.getStringExtra(Intent.EXTRA_TEXT);
         INSTRUMENT_DETAIL_KEY = category;
-        if (category.equals("acoustic guitars")) {
+        if (category.equals("Acoustic Guitars")) {
             ArrayList<Instrument> acousticGuitars = Instrument.getAcousticGuitarList();
             instrumentAdapter = new InstrumentAdapter(this, acousticGuitars);
             listView.setAdapter(instrumentAdapter);
-        } else if (category.equals("electric guitars")) {
+        } else if (category.equals("Electric Guitars")) {
             ArrayList<Instrument> electricGuitars = Instrument.getElectricGuitarList();
             instrumentAdapter = new InstrumentAdapter(this, electricGuitars);
             listView.setAdapter(instrumentAdapter);
-        } else if (category.equals("pianos")) {
+        } else if (category.equals("Pianos")) {
             ArrayList<Instrument> pianos = Instrument.getPianoList();
             instrumentAdapter = new InstrumentAdapter(this, pianos);
             listView.setAdapter(instrumentAdapter);
-        } else if (category.equals("ukuleles")) {
+        } else if (category.equals("Ukuleles")) {
             ArrayList<Instrument> ukuleles = Instrument.getUkuleleList();
             instrumentAdapter = new InstrumentAdapter(this, ukuleles);
             listView.setAdapter(instrumentAdapter);
@@ -54,6 +60,7 @@ public class ListActivity extends AppCompatActivity {
             listView.setAdapter(instrumentAdapter);
         }
 
+        tvSearchResults.setText(category);
         LinearLayoutManager lm = new LinearLayoutManager(this);
         setupSelectedInstrumentListener();
 

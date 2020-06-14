@@ -19,6 +19,7 @@ public class DetailActivity extends AppCompatActivity {
     private TextView tvDescription;
     private TextView tvLocation;
     private TextView tvColour;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,6 +38,7 @@ public class DetailActivity extends AppCompatActivity {
         Instrument instrument = (Instrument)
                 intent.getSerializableExtra(ListActivity.INSTRUMENT_DETAIL_KEY);
         loadInstrument(instrument);
+        this.setTitle("Strumento");
     }
     private void loadInstrument(Instrument instrument) {
         //change activity title

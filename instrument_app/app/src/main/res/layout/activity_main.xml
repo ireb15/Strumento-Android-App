@@ -22,7 +22,7 @@
                 android:id="@+id/llTopPicks"
                 android:layout_width="match_parent"
                 android:layout_height="184dp"
-                android:background="#EEEEEE"
+                android:background="#FFECB3"
                 android:orientation="vertical" >
 
                 <TextView
